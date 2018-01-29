@@ -1,0 +1,51 @@
+PODS:
+  - AppAuth (0.92.0)
+  - Nimble (7.0.3)
+  - OHHTTPStubs (6.1.0):
+    - OHHTTPStubs/Default (= 6.1.0)
+  - OHHTTPStubs/Core (6.1.0)
+  - OHHTTPStubs/Default (6.1.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (6.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (6.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (6.1.0)
+  - OHHTTPStubs/Swift (6.1.0):
+    - OHHTTPStubs/Default
+  - Quick (1.2.0)
+  - RxBlocking (4.1.1):
+    - RxSwift (~> 4.0)
+  - RxCocoa (4.1.1):
+    - RxSwift (~> 4.0)
+  - RxNimble (4.1.0):
+    - Nimble (~> 7.0)
+    - RxBlocking (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.1)
+
+DEPENDENCIES:
+  - AppAuth
+  - OHHTTPStubs
+  - OHHTTPStubs/Swift
+  - Quick
+  - RxBlocking
+  - RxCocoa
+  - RxNimble
+
+SPEC CHECKSUMS:
+  AppAuth: 3f4f1d6d85ad631d0bbf15ffcdc10c447face97a
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  RxBlocking: 22e7d7b86a1c0c42164a30d64f56f97128b4ffab
+  RxCocoa: fd0862fd2df95fa55562ad28ffd2522c25eb4a85
+  RxNimble: e5a34bf3b18d85406fc2a6e2cbc73aa2b4a858f0
+  RxSwift: c6e3b1c7b325c7d121cd4327e9d98b7ed746b570
+
+PODFILE CHECKSUM: 7f60941621e6c9b30c8aa2f8773f7a0aa5166dce
+
+COCOAPODS: 1.4.0

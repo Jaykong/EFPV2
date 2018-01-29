@@ -7,7 +7,7 @@
 //
 
 import XCTest
-
+@testable import EFPV2
 class EFPV2UITests: XCTestCase {
         
     override func setUp() {
@@ -29,8 +29,8 @@ class EFPV2UITests: XCTestCase {
     }
     
     func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+
     }
     
 }
