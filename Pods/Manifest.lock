@@ -1,6 +1,8 @@
 PODS:
   - AppAuth (0.92.0)
+  - M80AttributedLabel (1.6.3)
   - Nimble (7.0.3)
+  - NIMSDK (4.7.2)
   - OHHTTPStubs (6.1.0):
     - OHHTTPStubs/Default (= 6.1.0)
   - OHHTTPStubs/Core (6.1.0)
@@ -26,26 +28,44 @@ PODS:
     - RxBlocking (~> 4.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.1.1)
+  - SDWebImage (4.2.3):
+    - SDWebImage/Core (= 4.2.3)
+  - SDWebImage/Core (4.2.3)
+  - SVProgressHUD (2.0.4)
+  - Toast (3.1.0)
+  - TZImagePickerController (1.7.9)
 
 DEPENDENCIES:
   - AppAuth
+  - M80AttributedLabel
+  - NIMSDK
   - OHHTTPStubs
   - OHHTTPStubs/Swift
   - Quick
   - RxBlocking
   - RxCocoa
   - RxNimble
+  - SDWebImage
+  - SVProgressHUD
+  - Toast
+  - TZImagePickerController
 
 SPEC CHECKSUMS:
   AppAuth: 3f4f1d6d85ad631d0bbf15ffcdc10c447face97a
+  M80AttributedLabel: d06543195d3e451d2ea62ad76d04aa9cea7661d4
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  NIMSDK: 73fb61965d7f3a24b4cec253e6857e3a32e65168
   OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   RxBlocking: 22e7d7b86a1c0c42164a30d64f56f97128b4ffab
   RxCocoa: fd0862fd2df95fa55562ad28ffd2522c25eb4a85
   RxNimble: e5a34bf3b18d85406fc2a6e2cbc73aa2b4a858f0
   RxSwift: c6e3b1c7b325c7d121cd4327e9d98b7ed746b570
+  SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
+  SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
+  Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
+  TZImagePickerController: 0a8ff228d287ebdd7d485e8c42a2a932894f1fba
 
-PODFILE CHECKSUM: 7f60941621e6c9b30c8aa2f8773f7a0aa5166dce
+PODFILE CHECKSUM: e290b6054c649c4468a61fe9f5d018cf2c2ff127
 
 COCOAPODS: 1.4.0

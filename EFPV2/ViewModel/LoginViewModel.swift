@@ -8,31 +8,41 @@
 
 import Foundation
 import AppAuth
-
-protocol LoginViewModelDelegate {
-    
-}
-
+import RxSwift
 class LoginViewModel {
- typealias  LogViewModelDelegate = () -> UIViewController
+    
 
    private var authorizationFlowSession:OIDAuthorizationFlowSession!
-    var logViewModelDelegate:LogViewModelDelegate!
+    let sceneCoordinate:SceneCoordinator
     // MARK: - Init
-    
+    init(sceneCoordinate:SceneCoordinator) {
+        self.sceneCoordinate = sceneCoordinate
+    }
     // MARK: - Input
     
     // MARK: - Output
+    var isLogin = Variable<Bool>(false)
     
     func accessTokenSucess(handler: @escaping (String) -> ()) {
         OAuthService.authorizationRequestCompletionHandler { (request) in
-            let viewController = self.logViewModelDelegate()
+            let viewController = Scene.login(self).viewController()
+            
             self.authorizationFlowSession = OIDAuthState.authState(byPresenting: request, presenting:viewController , callback: { (state, error) in
                 //TODO: - save
                 handler(state?.lastTokenResponse?.accessToken ?? "")
+                
             })
         }
     }
+    
+    func onPresentMain() {
+        accessTokenSucess {[weak self] (str) in
+            let mainModel = MainViewModel()
+            let scene = Scene.main(mainModel)
+            
+            self?.sceneCoordinate.transitionTo(scene: scene, type: .root)
+            
+        }
+    }
 }
-
 

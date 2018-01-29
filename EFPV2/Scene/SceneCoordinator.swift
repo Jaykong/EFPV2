@@ -10,10 +10,9 @@ import Foundation
 import UIKit
  class SceneCoordinator:SceneCoordinatorType {
     let window:UIWindow
-    var currentViewController:UIViewController
-    required init(window:UIWindow,currentViewController:UIViewController) {
+    var currentViewController:UIViewController!
+    required init(window:UIWindow) {
         self.window = window
-        self.currentViewController = currentViewController
     }
     
     func transitionTo(scene: Scene, type: TransitionType) {
@@ -29,12 +28,12 @@ import UIKit
             
             
         case .root:
+            
             window.rootViewController = scene.viewController()
             
         }
         
-    }
-    
+    }    
     func pop(scene: Scene) {
         
     }

@@ -18,13 +18,14 @@ extension Scene {
         case .login(let loginViewModel):
             let sb = UIStoryboard(name: "Login", bundle: nil)
             let loginViewController = sb.instantiateInitialViewController() as! LoginViewController
+            loginViewController.logViewModel = loginViewModel
             return loginViewController
             
         case .main(let maiviewModel):
             let sb = UIStoryboard(name: "Main", bundle: nil)
-            let mainViewController = sb.instantiateInitialViewController() as! MainViewController
-            return mainViewController
-    }
+            let mainViewController = sb.instantiateInitialViewController()
+            return mainViewController!
+        }
     }
     
    
