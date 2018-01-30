@@ -8,8 +8,10 @@
 
 import Foundation
 import AppAuth
+
 enum OAuthService {
     static func authorizationRequestCompletionHandler(handler:@escaping (OIDAuthorizationRequest) -> ()) {
+        
         let issuerURL = NSURL(string: OAuthConstant.kIssuer)
         OIDAuthorizationService.discoverConfiguration(forIssuer: issuerURL! as URL) { configuration, error in            
             guard let configuration = configuration else {
@@ -20,5 +22,7 @@ enum OAuthService {
             handler(request)
         }
     }
+    
+   
     
 }

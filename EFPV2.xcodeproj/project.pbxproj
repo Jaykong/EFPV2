@@ -26,6 +26,7 @@
 		17D1A36D201F067C007381F4 /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A368201F067C007381F4 /* SceneCoordinatorType.swift */; };
 		17D1A36E201F067C007381F4 /* TransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A369201F067C007381F4 /* TransitionType.swift */; };
 		17D1A36F201F067C007381F4 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A36A201F067C007381F4 /* SceneCoordinator.swift */; };
+		17D1A7E1201F59F5007381F4 /* OIDAuthorizationService+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A7E0201F59F5007381F4 /* OIDAuthorizationService+Rx.swift */; };
 		A17C1180A8A20A82D013EFD0 /* Pods_EFPV2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847CDEC76C048AF2DCF58CAB /* Pods_EFPV2UITests.framework */; };
 		B634B178A8615D196891C3B5 /* Pods_EFPV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9759EFFF5E93495DE32806 /* Pods_EFPV2.framework */; };
 		C7618A512A858718D6533C87 /* Pods_EFPV2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BC4C733D47814850B3184A /* Pods_EFPV2Tests.framework */; };
@@ -339,6 +340,7 @@
 		17D1A7D8201F3121007381F4 /* NIMKitDependency.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIMKitDependency.h; sourceTree = "<group>"; };
 		17D1A7D9201F3121007381F4 /* NIMCommonTableData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIMCommonTableData.h; sourceTree = "<group>"; };
 		17D1A7DB201F3121007381F4 /* NIMKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIMKit.m; sourceTree = "<group>"; };
+		17D1A7E0201F59F5007381F4 /* OIDAuthorizationService+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OIDAuthorizationService+Rx.swift"; sourceTree = "<group>"; };
 		18BC4C733D47814850B3184A /* Pods_EFPV2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EFPV2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D2A29029979D8381353B76 /* Pods-EFPV2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EFPV2UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EFPV2UITests/Pods-EFPV2UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4D9759EFFF5E93495DE32806 /* Pods_EFPV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EFPV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -380,8 +382,8 @@
 		17D1A30F201EDE2C007381F4 = {
 			isa = PBXGroup;
 			children = (
-				17D1A516201F2E54007381F4 /* EFPV2-Header-Bridging.h */,
 				17D1A31A201EDE2C007381F4 /* EFPV2 */,
+				17D1A7DE201F3121007381F4 /* NIMKit */,
 				17D1A32F201EDE2C007381F4 /* EFPV2Tests */,
 				17D1A33A201EDE2C007381F4 /* EFPV2UITests */,
 				17D1A319201EDE2C007381F4 /* Products */,
@@ -403,12 +405,13 @@
 		17D1A31A201EDE2C007381F4 /* EFPV2 */ = {
 			isa = PBXGroup;
 			children = (
-				17D1A7DE201F3121007381F4 /* NIMKit */,
+				17D1A7DF201F595B007381F4 /* Rx */,
 				17D1A365201F067C007381F4 /* Scene */,
 				17D1A35D201F0582007381F4 /* ViewControllers */,
 				17D1A353201EFDAE007381F4 /* Service */,
 				17D1A34C201EE241007381F4 /* ViewModel */,
 				17D1A31B201EDE2C007381F4 /* AppDelegate.swift */,
+				17D1A516201F2E54007381F4 /* EFPV2-Header-Bridging.h */,
 				17D1A34B201EE0CA007381F4 /* Assets */,
 			);
 			path = EFPV2;
@@ -1008,8 +1011,16 @@
 				17D1A7DD201F3121007381F4 /* NIMKit */,
 			);
 			name = NIMKit;
-			path = /Users/jaykong/Desktop/EFPV2/EFPV2/NIMKit;
+			path = /Users/jaykong/Desktop/EFPV2/NIMKit;
 			sourceTree = "<absolute>";
+		};
+		17D1A7DF201F595B007381F4 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				17D1A7E0201F59F5007381F4 /* OIDAuthorizationService+Rx.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
 		};
 		3E35CABEDB1FFDBA08B8743C /* Frameworks */ = {
 			isa = PBXGroup;
@@ -1371,6 +1382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D1A7E1201F59F5007381F4 /* OIDAuthorizationService+Rx.swift in Sources */,
 				17D1A363201F05B2007381F4 /* MainViewController.swift in Sources */,
 				17D1A361201F05AB007381F4 /* LoginViewController.swift in Sources */,
 				17D1A31C201EDE2C007381F4 /* AppDelegate.swift in Sources */,
@@ -1491,7 +1503,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/EFPV2-Header-Bridging.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/EFPV2/EFPV2-Header-Bridging.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -1541,7 +1553,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/EFPV2-Header-Bridging.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/EFPV2/EFPV2-Header-Bridging.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};

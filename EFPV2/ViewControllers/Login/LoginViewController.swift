@@ -13,7 +13,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        logViewModel.onPresentMain()
+       // logViewModel.onPresentMain()
+        logViewModel.onSucessReturnToken()
         // Do any additional setup after loading the view.
     }
 
