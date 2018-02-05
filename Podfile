@@ -15,7 +15,10 @@ pod 'Toast'
 pod 'SVProgressHUD'
 pod 'M80AttributedLabel'
 pod 'TZImagePickerController'
-
+pod 'RxDataSources'
+pod 'BadgeSwift'
+pod 'SwiftFormat/CLI'
+pod 'SnapKit'
 
   target 'EFPV2Tests' do
     inherit! :search_paths
@@ -25,6 +28,8 @@ pod 'TZImagePickerController'
     pod 'OHHTTPStubs'
     pod 'OHHTTPStubs/Swift'
     pod 'Quick'
+    pod 'RxTest'
+    pod 'NSObject+Rx'
   end
 
   target 'EFPV2UITests' do

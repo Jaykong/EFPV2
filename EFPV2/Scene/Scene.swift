@@ -8,6 +8,7 @@
 
 import Foundation
 enum Scene {
-        case login(LoginViewModel)
-        case main(MainViewModel)
+    case login(LoginViewModel)
+    case main(MainViewModel)
+    case message(MessageViewModel)
 }

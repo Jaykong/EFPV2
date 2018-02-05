@@ -104,22 +104,22 @@ extension BlockingObservable {
     fileprivate func materializeResult(max: Int? = nil, predicate: @escaping (E) throws -> Bool = { _ in true }) -> MaterializedSequenceResult<E> {
         var elements: [E] = Array<E>()
         var error: Swift.Error?
-        
+
         let lock = RunLoopLock(timeout: timeout)
-        
+
         let d = SingleAssignmentDisposable()
-        
+
         defer {
             d.dispose()
         }
-        
+
         lock.dispatch {
             let subscription = self.source.subscribe { event in
                 if d.isDisposed {
                     return
                 }
                 switch event {
-                case .next(let element):
+                case let .next(element):
                     do {
                         if try predicate(element) {
                             elements.append(element)
@@ -128,12 +128,12 @@ extension BlockingObservable {
                             d.dispose()
                             lock.stop()
                         }
-                    } catch (let err) {
+                    } catch let err {
                         error = err
                         d.dispose()
                         lock.stop()
                     }
-                case .error(let err):
+                case let .error(err):
                     error = err
                     d.dispose()
                     lock.stop()
@@ -142,28 +142,28 @@ extension BlockingObservable {
                     lock.stop()
                 }
             }
-            
+
             d.setDisposable(subscription)
         }
-        
+
         do {
             try lock.run()
-        } catch (let err) {
+        } catch let err {
             error = err
         }
-        
+
         if let error = error {
             return MaterializedSequenceResult.failed(elements: elements, error: error)
         }
-        
+
         return MaterializedSequenceResult.completed(elements: elements)
     }
-    
+
     fileprivate func elementsOrThrow(_ results: MaterializedSequenceResult<E>) throws -> [E] {
         switch results {
-        case .failed(_, let error):
+        case let .failed(_, error):
             throw error
-        case .completed(let elements):
+        case let .completed(elements):
             return elements
         }
     }

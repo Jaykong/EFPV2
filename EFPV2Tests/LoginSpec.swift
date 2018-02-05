@@ -9,9 +9,4 @@
 import Foundation
 import Quick
 class LoginSpec: QuickSpec {
-    override func spec() {
-        describe(<#T##description: String!##String!#>, <#T##closure: QCKDSLEmptyBlock!##QCKDSLEmptyBlock!##() -> Void#>)
-    }
-    
-    
 }

@@ -7,21 +7,22 @@
 //
 
 import Nimble
-import RxSwift
 import RxBlocking
+import RxSwift
 
 public extension Expectation where T: ObservableType {
 
     /**
      Expectation with sequence's first element
-     
+
      Transforms the expression by blocking sequence and returns its first element.
-    */
+     */
     public var first: Expectation<T.E> {
         return transform { source in
             try source?.toBlocking().first()
         }
     }
+
     /**
      Expectation with sequence's last element
 

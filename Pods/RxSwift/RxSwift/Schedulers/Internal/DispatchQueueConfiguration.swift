@@ -16,7 +16,7 @@ struct DispatchQueueConfiguration {
 
 private func dispatchInterval(_ interval: Foundation.TimeInterval) -> DispatchTimeInterval {
     precondition(interval >= 0.0)
-    // TODO: Replace 1000 with something that actually works 
+    // TODO: Replace 1000 with something that actually works
     // NSEC_PER_MSEC returns 1000000
     return DispatchTimeInterval.milliseconds(Int(interval * 1000.0))
 }
@@ -29,7 +29,6 @@ extension DispatchQueueConfiguration {
             if cancel.isDisposed {
                 return
             }
-
 
             cancel.setDisposable(action(state))
         }
@@ -86,7 +85,7 @@ extension DispatchQueueConfiguration {
         #else
             timer.scheduleRepeating(deadline: initial, interval: dispatchInterval(period), leeway: leeway)
         #endif
-        
+
         // TODO:
         // This looks horrible, and yes, it is.
         // It looks like Apple has made a conceputal change here, and I'm unsure why.
@@ -106,7 +105,7 @@ extension DispatchQueueConfiguration {
             timerState = action(timerState)
         })
         timer.resume()
-        
+
         return cancelTimer
     }
 }

@@ -19,18 +19,18 @@ extension ObservableType {
      */
     public func map<R>(_ transform: @escaping (E) throws -> R)
         -> Observable<R> {
-        return self.asObservable().composeMap(transform)
+        return asObservable().composeMap(transform)
     }
 }
 
-final fileprivate class MapSink<SourceType, O : ObserverType> : Sink<O>, ObserverType {
+fileprivate final class MapSink<SourceType, O: ObserverType>: Sink<O>, ObserverType {
     typealias Transform = (SourceType) throws -> ResultType
 
     typealias ResultType = O.E
     typealias Element = SourceType
 
     private let _transform: Transform
-    
+
     init(transform: @escaping Transform, observer: O, cancel: Cancelable) {
         _transform = transform
         super.init(observer: observer, cancel: cancel)
@@ -38,16 +38,15 @@ final fileprivate class MapSink<SourceType, O : ObserverType> : Sink<O>, Observe
 
     func on(_ event: Event<SourceType>) {
         switch event {
-        case .next(let element):
+        case let .next(element):
             do {
                 let mappedElement = try _transform(element)
                 forwardOn(.next(mappedElement))
-            }
-            catch let e {
+            } catch let e {
                 forwardOn(.error(e))
                 dispose()
             }
-        case .error(let error):
+        case let .error(error):
             forwardOn(.error(error))
             dispose()
         case .completed:
@@ -70,7 +69,7 @@ internal func _map<Element, R>(source: Observable<Element>, transform: @escaping
     return Map(source: source, transform: transform)
 }
 
-final fileprivate class Map<SourceType, ResultType>: Producer<ResultType> {
+fileprivate final class Map<SourceType, ResultType>: Producer<ResultType> {
     typealias Transform = (SourceType) throws -> ResultType
 
     private let _source: Observable<SourceType>
@@ -81,9 +80,9 @@ final fileprivate class Map<SourceType, ResultType>: Producer<ResultType> {
         _source = source
         _transform = transform
 
-#if TRACE_RESOURCES
-        let _ = AtomicIncrement(&_numberOfMapOperators)
-#endif
+        #if TRACE_RESOURCES
+            _ = AtomicIncrement(&_numberOfMapOperators)
+        #endif
     }
 
     override func composeMap<R>(_ selector: @escaping (ResultType) throws -> R) -> Observable<R> {
@@ -93,7 +92,7 @@ final fileprivate class Map<SourceType, ResultType>: Producer<ResultType> {
             return try selector(r)
         })
     }
-    
+
     override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == ResultType {
         let sink = MapSink(transform: _transform, observer: observer, cancel: cancel)
         let subscription = _source.subscribe(sink)
@@ -101,8 +100,8 @@ final fileprivate class Map<SourceType, ResultType>: Producer<ResultType> {
     }
 
     #if TRACE_RESOURCES
-    deinit {
-        let _ = AtomicDecrement(&_numberOfMapOperators)
-    }
+        deinit {
+            _ = AtomicDecrement(&_numberOfMapOperators)
+        }
     #endif
 }

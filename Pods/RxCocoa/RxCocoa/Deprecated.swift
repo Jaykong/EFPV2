@@ -6,8 +6,9 @@
 //  Copyright © 2017 Krunoslav Zaher. All rights reserved.
 //
 
-import RxSwift
 import Dispatch
+import RxSwift
+import RxSwift
 
 extension ObservableType {
 
@@ -22,7 +23,7 @@ extension ObservableType {
      */
     @available(*, deprecated, renamed: "bind(to:)")
     public func bindTo<O: ObserverType>(_ observer: O) -> Disposable where O.E == E {
-        return self.subscribe(observer)
+        return subscribe(observer)
     }
 
     /**
@@ -36,7 +37,7 @@ extension ObservableType {
      */
     @available(*, deprecated, renamed: "bind(to:)")
     public func bindTo<O: ObserverType>(_ observer: O) -> Disposable where O.E == E? {
-        return self.map { $0 }.subscribe(observer)
+        return map { $0 }.subscribe(observer)
     }
 
     /**
@@ -78,7 +79,7 @@ extension ObservableType {
      */
     @available(*, deprecated, renamed: "bind(to:)")
     public func bindTo(_ variable: Variable<E?>) -> Disposable {
-        return self.map { $0 as E? }.bindTo(variable)
+        return map { $0 as E? }.bindTo(variable)
     }
 
     /**
@@ -108,7 +109,6 @@ extension ObservableType {
     public func bindTo<R1, R2>(_ binder: (Self) -> (R1) -> R2, curriedArgument: R1) -> R2 {
         return binder(self)(curriedArgument)
     }
-
 
     /**
      Subscribes an element handler to an observable sequence.
@@ -219,6 +219,7 @@ extension ObservableType {
             fatalError()
         }
     }
+
     extension UIWebView {
         @available(*, unavailable, message: "createRxDelegateProxy is now unavailable, check DelegateProxyFactory")
         public func createRxDelegateProxy() -> RxWebViewDelegateProxy {
@@ -245,7 +246,7 @@ extension ObservableType {
  **This shouldn't be used in normal release builds.**
  */
 @available(*, deprecated, renamed: "SharingScheduler.mock(scheduler:action:)")
-public func driveOnScheduler(_ scheduler: SchedulerType, action: () -> ()) {
+public func driveOnScheduler(_ scheduler: SchedulerType, action: () -> Void) {
     SharingScheduler.mock(scheduler: scheduler, action: action)
 }
 
@@ -254,8 +255,8 @@ extension Variable {
     ///
     /// - returns: Observable sequence.
     @available(*, deprecated, renamed: "asDriver()")
-    public func asSharedSequence<SharingStrategy: SharingStrategyProtocol>(strategy: SharingStrategy.Type = SharingStrategy.self) -> SharedSequence<SharingStrategy, E> {
-        let source = self.asObservable()
+    public func asSharedSequence<SharingStrategy: SharingStrategyProtocol>(strategy _: SharingStrategy.Type = SharingStrategy.self) -> SharedSequence<SharingStrategy, E> {
+        let source = asObservable()
             .observeOn(SharingStrategy.scheduler)
         return SharedSequence(source)
     }
@@ -263,32 +264,32 @@ extension Variable {
 
 #if !os(Linux)
 
-extension DelegateProxy {
-    @available(*, unavailable, renamed: "assignedProxy(for:)")
-    public static func assignedProxyFor(_ object: ParentObject) -> Delegate? {
-        fatalError()
+    extension DelegateProxy {
+        @available(*, unavailable, renamed: "assignedProxy(for:)")
+        public static func assignedProxyFor(_: ParentObject) -> Delegate? {
+            fatalError()
+        }
+
+        @available(*, unavailable, renamed: "currentDelegate(for:)")
+        public static func currentDelegateFor(_: ParentObject) -> Delegate? {
+            fatalError()
+        }
     }
-    
-    @available(*, unavailable, renamed: "currentDelegate(for:)")
-    public static func currentDelegateFor(_ object: ParentObject) -> Delegate? {
-        fatalError()
-    }
-}
 
 #endif
 
 /**
-Observer that enforces interface binding rules:
+ Observer that enforces interface binding rules:
  * can't bind errors (in debug builds binding of errors causes `fatalError` in release builds errors are being logged)
  * ensures binding is performed on main thread
- 
-`UIBindingObserver` doesn't retain target interface and in case owned interface element is released, element isn't bound.
- 
+
+ `UIBindingObserver` doesn't retain target interface and in case owned interface element is released, element isn't bound.
+
  In case event binding is attempted from non main dispatch queue, event binding will be dispatched async to main dispatch
  queue.
-*/
+ */
 @available(*, deprecated, renamed: "Binder")
-public final class UIBindingObserver<UIElementType, Value> : ObserverType where UIElementType: AnyObject {
+public final class UIBindingObserver<UIElementType, Value>: ObserverType where UIElementType: AnyObject {
     public typealias E = Value
 
     weak var UIElement: UIElementType?
@@ -312,11 +313,11 @@ public final class UIBindingObserver<UIElementType, Value> : ObserverType where 
         }
 
         switch event {
-        case .next(let element):
+        case let .next(element):
             if let view = self.UIElement {
                 binding(view, element)
             }
-        case .error(let error):
+        case let .error(error):
             bindingError(error)
         case .completed:
             break
@@ -331,42 +332,40 @@ public final class UIBindingObserver<UIElementType, Value> : ObserverType where 
     }
 }
 
-
 #if os(iOS)
     extension Reactive where Base: UIRefreshControl {
 
         /// Bindable sink for `beginRefreshing()`, `endRefreshing()` methods.
         @available(*, deprecated, renamed: "isRefreshing")
         public var refreshing: Binder<Bool> {
-            return self.isRefreshing
+            return isRefreshing
         }
     }
 #endif
 
 #if os(iOS) || os(tvOS)
-extension Reactive where Base: UIImageView {
+    extension Reactive where Base: UIImageView {
 
-    /// Bindable sink for `image` property.
-    /// - parameter transitionType: Optional transition type while setting the image (kCATransitionFade, kCATransitionMoveIn, ...)
-    @available(*, deprecated, renamed: "image")
-    public func image(transitionType: String? = nil) -> Binder<UIImage?> {
-        return Binder(base) { imageView, image in
-            if let transitionType = transitionType {
-                if image != nil {
-                    let transition = CATransition()
-                    transition.duration = 0.25
-                    transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-                    transition.type = transitionType
-                    imageView.layer.add(transition, forKey: kCATransition)
+        /// Bindable sink for `image` property.
+        /// - parameter transitionType: Optional transition type while setting the image (kCATransitionFade, kCATransitionMoveIn, ...)
+        @available(*, deprecated, renamed: "image")
+        public func image(transitionType: String? = nil) -> Binder<UIImage?> {
+            return Binder(base) { imageView, image in
+                if let transitionType = transitionType {
+                    if image != nil {
+                        let transition = CATransition()
+                        transition.duration = 0.25
+                        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+                        transition.type = transitionType
+                        imageView.layer.add(transition, forKey: kCATransition)
+                    }
+                } else {
+                    imageView.layer.removeAllAnimations()
                 }
+                imageView.image = image
             }
-            else {
-                imageView.layer.removeAllAnimations()
-            }
-            imageView.image = image
         }
     }
-}
 #endif
 
 #if os(macOS)
@@ -378,7 +377,7 @@ extension Reactive where Base: UIImageView {
         /// - parameter transitionType: Optional transition type while setting the image (kCATransitionFade, kCATransitionMoveIn, ...)
         @available(*, deprecated, renamed: "image")
         public func image(transitionType: String? = nil) -> Binder<NSImage?> {
-            return Binder(self.base) { control, value in
+            return Binder(base) { control, value in
                 if let transitionType = transitionType {
                     if value != nil {
                         let transition = CATransition()
@@ -387,8 +386,7 @@ extension Reactive where Base: UIImageView {
                         transition.type = transitionType
                         control.layer?.add(transition, forKey: kCATransition)
                     }
-                }
-                else {
+                } else {
                     control.layer?.removeAllAnimations()
                 }
                 control.image = value
@@ -397,22 +395,19 @@ extension Reactive where Base: UIImageView {
     }
 #endif
 
-import RxSwift
-
 extension Variable {
     /// Converts `Variable` to `Driver` trait.
     ///
     /// - returns: Driving observable sequence.
     public func asDriver() -> Driver<E> {
-        let source = self.asObservable()
+        let source = asObservable()
             .observeOn(DriverSharingStrategy.scheduler)
         return Driver(source)
     }
 }
 
-
 private let errorMessage = "`drive*` family of methods can be only called from `MainThread`.\n" +
-"This is required to ensure that the last replayed `Driver` element is delivered on `MainThread`.\n"
+    "This is required to ensure that the last replayed `Driver` element is delivered on `MainThread`.\n"
 
 extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingStrategy {
     /**
@@ -482,8 +477,6 @@ extension ObservableType {
      - returns: Disposable object that can be used to unsubscribe the observer.
      */
     public func bind(to variable: Variable<E?>) -> Disposable {
-        return self.map { $0 as E? }.bind(to: variable)
+        return map { $0 as E? }.bind(to: variable)
     }
 }
-
-

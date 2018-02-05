@@ -6,4 +6,4 @@
 //  Copyright © 2018 JayKong. All rights reserved.
 //
 
-//#import <NIMKit/NIMKit.h>
+#import "NIMKit.h"

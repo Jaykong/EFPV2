@@ -8,35 +8,33 @@
 
 import Foundation
 import UIKit
- class SceneCoordinator:SceneCoordinatorType {
-    let window:UIWindow
-    var currentViewController:UIViewController!
-    required init(window:UIWindow) {
+class SceneCoordinator: SceneCoordinatorType {
+    let window: UIWindow
+    var currentViewController: UIViewController!
+    required init(window: UIWindow) {
         self.window = window
     }
-    
+
     func transitionTo(scene: Scene, type: TransitionType) {
         switch type {
         case .modal:
             let viewController = scene.viewController()
-            
+
             currentViewController.present(viewController, animated: true, completion: nil)
         case .push:
             let viewController = scene.viewController()
-            
+
             currentViewController.show(viewController, sender: nil)
-            
-            
+
         case .root:
+            currentViewController = scene.viewController()
             
-            window.rootViewController = scene.viewController()
-            
+            let navitionController = UINavigationController(rootViewController: currentViewController)
+
+            window.rootViewController = navitionController
         }
-        
-    }    
-    func pop(scene: Scene) {
-        
     }
-    
-    
+
+    func pop(scene _: Scene) {
+    }
 }

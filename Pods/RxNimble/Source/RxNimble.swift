@@ -1,6 +1,6 @@
-import RxSwift
-import RxBlocking
 import Nimble
+import RxBlocking
+import RxSwift
 
 // This is handy so we can write expect(o) == 1 instead of expect(o.value) == 1 or whatever.
 @available(*, deprecated, message: "use expect(o).first instead")
@@ -34,7 +34,7 @@ public func equalFirst<T: Equatable, O: ObservableType>(_ expectedValue: T?) -> 
         switch actualValue {
         case .none:
             matches = (expectedValue == nil)
-        case .some(let wrapped):
+        case let .some(wrapped):
             matches = (wrapped == expectedValue)
         }
 
@@ -53,7 +53,7 @@ public func equalFirst<T: Equatable>(_ expectedValue: T?) -> Predicate<Variable<
         switch actualValue {
         case .none:
             matches = (expectedValue == nil)
-        case .some(let wrapped):
+        case let .some(wrapped):
             matches = (wrapped == expectedValue)
         }
 
@@ -65,31 +65,31 @@ public func equalFirst<T: Equatable>(_ expectedValue: T?) -> Predicate<Variable<
 // Applies to Observables of T, which must conform to Equatable.
 
 @available(*, deprecated, message: "use expect(o).first instead")
-public func ==<T: Equatable, O: ObservableType>(lhs: Expectation<O>, rhs: T?) where O.E == T {
+public func == <T: Equatable, O: ObservableType>(lhs: Expectation<O>, rhs: T?) where O.E == T {
     lhs.to(equalFirst(rhs))
 }
 
 @available(*, deprecated, message: "use expect(o).first instead")
-public func ==<T: Equatable>(lhs: Expectation<Variable<T>>, rhs: T?) {
+public func == <T: Equatable>(lhs: Expectation<Variable<T>>, rhs: T?) {
     lhs.to(equalFirst(rhs))
 }
 
 @available(*, deprecated, message: "use expect(o).first instead")
-public func ==<T: Equatable, O: ObservableType>(lhs: Expectation<O>, rhs: T?) where O.E == Optional<T> {
+public func == <T: Equatable, O: ObservableType>(lhs: Expectation<O>, rhs: T?) where O.E == Optional<T> {
     lhs.to(equalFirst(rhs))
 }
 
 @available(*, deprecated, message: "use expect(o).first instead")
-public func ==<T: Equatable>(lhs: Expectation<Variable<T?>>, rhs: T?) {
+public func == <T: Equatable>(lhs: Expectation<Variable<T?>>, rhs: T?) {
     lhs.to(equalFirst(rhs))
 }
 
 @available(*, deprecated, message: "use expect(o).first instead")
-public func ==<T: Equatable, O: Observable<T>>(lhs: Expectation<O>, rhs: T?) {
+public func == <T: Equatable, O: Observable<T>>(lhs: Expectation<O>, rhs: T?) {
     lhs.to(equalFirst(rhs))
 }
 
 @available(*, deprecated, message: "use expect(o).first instead")
-public func ==<T: Equatable, O: Observable<Optional<T>>>(lhs: Expectation<O>, rhs: T?) {
+public func == <T: Equatable, O: Observable<Optional<T>>>(lhs: Expectation<O>, rhs: T?) {
     lhs.to(equalFirst(rhs))
 }

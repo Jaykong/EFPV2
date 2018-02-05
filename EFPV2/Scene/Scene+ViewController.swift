@@ -10,23 +10,26 @@ import Foundation
 import UIKit
 extension Scene {
 
-    /// given different model, instantiate different view controller
-    ///
-    /// - Returns: ui view controller
     func viewController() -> UIViewController {
         switch self {
-        case .login(let loginViewModel):
+        case let .login(loginViewModel):
             let sb = UIStoryboard(name: "Login", bundle: nil)
             let loginViewController = sb.instantiateInitialViewController() as! LoginViewController
             loginViewController.logViewModel = loginViewModel
             return loginViewController
-            
-        case .main(let maiviewModel):
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            let mainViewController = sb.instantiateInitialViewController()
-            return mainViewController!
+
+        case let .main(mainViewModel):
+
+            let mainViewController = MainViewController()
+            mainViewController.viewModel = mainViewModel
+            return mainViewController
+
+        case let .message(messageViewModel):
+            let messageViewController = MessageViewController()
+            return messageViewController
+
         }
     }
-    
-   
+
 }
+

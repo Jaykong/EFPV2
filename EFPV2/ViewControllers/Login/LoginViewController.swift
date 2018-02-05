@@ -6,16 +6,14 @@
 //  Copyright © 2018 JayKong. All rights reserved.
 //
 
-import UIKit
 import RxSwift
+import UIKit
 class LoginViewController: UIViewController {
-    var logViewModel:LoginViewModel!
-    
+    var logViewModel: LoginViewModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-       // logViewModel.onPresentMain()
         logViewModel.onSucessReturnToken()
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,10 +8,10 @@
 
 #if os(Linux)
 
-    import XCTest
+    import class Foundation.Thread
     import Glibc
     import SwiftShims
-    import class Foundation.Thread
+    import XCTest
 
     final class AtomicInt {
         typealias IntegerLiteralType = Int
@@ -19,10 +19,11 @@
         fileprivate var _lock = RecursiveLock()
 
         func lock() {
-          _lock.lock()
+            _lock.lock()
         }
+
         func unlock() {
-          _lock.unlock()
+            _lock.unlock()
         }
 
         func valueSnapshot() -> Int32 {
@@ -36,11 +37,12 @@
             self.value = Int32(value)
         }
     }
-    
-    func >(lhs: AtomicInt, rhs: Int32) -> Bool {
+
+    func > (lhs: AtomicInt, rhs: Int32) -> Bool {
         return lhs.value > rhs
     }
-    func ==(lhs: AtomicInt, rhs: Int32) -> Bool {
+
+    func == (lhs: AtomicInt, rhs: Int32) -> Bool {
         return lhs.value == rhs
     }
 
@@ -86,8 +88,7 @@
 
             if let newValue = value {
                 threadDictionary[key] = newValue
-            }
-            else {
+            } else {
                 threadDictionary[key] = nil
             }
 

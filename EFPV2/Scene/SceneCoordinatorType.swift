@@ -8,6 +8,6 @@
 
 import Foundation
 protocol SceneCoordinatorType {
-    func transitionTo(scene:Scene,type:TransitionType)
-    func pop(scene:Scene)
+    func transitionTo(scene: Scene, type: TransitionType)
+    func pop(scene: Scene)
 }
