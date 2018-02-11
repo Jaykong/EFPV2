@@ -27,7 +27,8 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       language = ""
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -39,6 +40,9 @@
                ReferencedContainer = "container:EFPV2.xcodeproj">
             </BuildableReference>
             <SkippedTests>
+               <Test
+                  Identifier = "GroupProfileViewModelTests/test_team_not_nil()">
+               </Test>
                <Test
                   Identifier = "LoginSpec">
                </Test>
@@ -56,6 +60,18 @@
                </Test>
                <Test
                   Identifier = "OAuthServiceTests">
+               </Test>
+               <Test
+                  Identifier = "RecentSearchRecordStoreTests/testFirst()">
+               </Test>
+               <Test
+                  Identifier = "RecentSearchRecordStoreTests/testMaxCount()">
+               </Test>
+               <Test
+                  Identifier = "RecentSearchRecordStoreTests/testSecond()">
+               </Test>
+               <Test
+                  Identifier = "RecentSessionListViewModelTests/test_json_to_dictionary()">
                </Test>
             </SkippedTests>
             <LocationScenarioReference

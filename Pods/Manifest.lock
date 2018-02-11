@@ -44,6 +44,7 @@ PODS:
   - SnapKit (4.0.0)
   - SVProgressHUD (2.0.4)
   - SwiftFormat/CLI (0.32.2)
+  - SwiftyJSON (4.0.0)
   - Toast (3.1.0)
   - TZImagePickerController (1.7.9)
 
@@ -65,6 +66,7 @@ DEPENDENCIES:
   - SnapKit
   - SVProgressHUD
   - SwiftFormat/CLI
+  - SwiftyJSON
   - Toast
   - TZImagePickerController
 
@@ -88,9 +90,10 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
   SwiftFormat: 9db2ffa51139d7aea21a4eb90a7f7158a34cb6b5
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
   TZImagePickerController: 0a8ff228d287ebdd7d485e8c42a2a932894f1fba
 
-PODFILE CHECKSUM: 60867b5fb53a2425c5ec483e682448f5e977fd3f
+PODFILE CHECKSUM: ac3c4412d032bec47e52e6a787e9306a9b5cb224
 
 COCOAPODS: 1.4.0

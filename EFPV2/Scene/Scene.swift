@@ -7,8 +7,16 @@
 //
 
 import Foundation
+
 enum Scene {
+
     case login(LoginViewModel)
-    case main(MainViewModel)
-    case message(MessageViewModel)
+    // case sessionList(RecentSessionListViewModel)
+    case session(SessionViewModel)
+    case sessionImageView(SessionImageViewModel)
+    // case study(StudyViewModel)
+    // case home(HomeViewModel)
+    // case schedule(ScheduleViewModel)
+    case videoPlay(FullVideoPlayerViewModel)
+    case tabBar
 }

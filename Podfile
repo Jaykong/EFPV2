@@ -19,6 +19,8 @@ pod 'RxDataSources'
 pod 'BadgeSwift'
 pod 'SwiftFormat/CLI'
 pod 'SnapKit'
+pod 'NSObject+Rx'
+pod 'SwiftyJSON'
 
   target 'EFPV2Tests' do
     inherit! :search_paths
@@ -29,7 +31,7 @@ pod 'SnapKit'
     pod 'OHHTTPStubs/Swift'
     pod 'Quick'
     pod 'RxTest'
-    pod 'NSObject+Rx'
+   
   end
 
   target 'EFPV2UITests' do

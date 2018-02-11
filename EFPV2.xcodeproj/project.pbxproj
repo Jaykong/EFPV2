@@ -7,40 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1728C760202721440086E527 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1728C75F202721440086E527 /* MessageViewController.swift */; };
-		1728C7632027F07A0086E527 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1728C7622027F07A0086E527 /* MessageViewModel.swift */; };
+		171B5418202F4C8B00686BF5 /* EFPRecentSessionScene+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B5417202F4C8B00686BF5 /* EFPRecentSessionScene+ViewController.swift */; };
+		1728C760202721440086E527 /* EFPSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1728C75F202721440086E527 /* EFPSessionViewController.swift */; };
+		1728C7632027F07A0086E527 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1728C7622027F07A0086E527 /* SessionViewModel.swift */; };
+		1748488D202FDB89000C7BEC /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1748488C202FDB89000C7BEC /* assets-images.swift */; };
 		17536F2320262BF700B365A4 /* ConfigureSearchbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17536F2220262BF700B365A4 /* ConfigureSearchbar.swift */; };
-		17A2770E2026A244002A9992 /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A2770D2026A244002A9992 /* MainViewModelTests.swift */; };
+		1775986120294B50004236EB /* VideoViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1775986020294B50004236EB /* VideoViewItem.swift */; };
+		1775986320294C32004236EB /* FullVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1775986220294C32004236EB /* FullVideoViewController.swift */; };
+		1775988A20297145004236EB /* RecentSessionListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1775988920297145004236EB /* RecentSessionListCellViewModel.swift */; };
+		1775988E2029825B004236EB /* RecentSessionListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1775988D2029825B004236EB /* RecentSessionListViewModelTests.swift */; };
+		177598BB202AD05E004236EB /* GroupProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177598BA202AD05E004236EB /* GroupProfileViewModel.swift */; };
+		177598BF202AD6E5004236EB /* TeamClientCustomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177598BE202AD6E5004236EB /* TeamClientCustomInfo.swift */; };
+		177598C1202ADAD7004236EB /* GroupProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177598C0202ADAD7004236EB /* GroupProfileViewModelTests.swift */; };
+		177598C3202ADB83004236EB /* MockSceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177598C2202ADB83004236EB /* MockSceneCoordinator.swift */; };
+		177FEC66202B366100E2CAFB /* FullVideoPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177FEC65202B366100E2CAFB /* FullVideoPlayerViewModel.swift */; };
+		177FEC68202B41FD00E2CAFB /* CustomViewControllerTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177FEC67202B41FD00E2CAFB /* CustomViewControllerTransitioning.swift */; };
+		177FEC6A202B436600E2CAFB /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177FEC69202B436600E2CAFB /* CustomPresentationController.swift */; };
+		1795CAE62028B4CB006DD9F0 /* EFPSessionFullImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1795CAE52028B4CB006DD9F0 /* EFPSessionFullImageViewController.swift */; };
+		1795CAE92028B588006DD9F0 /* SessionImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1795CAE82028B588006DD9F0 /* SessionImageViewModel.swift */; };
+		1795CAEC2028B82D006DD9F0 /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1795CAEB2028B82D006DD9F0 /* GalleryItem.swift */; };
+		1797DD0E202B8FD7001E8D13 /* AppDelegate+tabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797DD0D202B8FD7001E8D13 /* AppDelegate+tabBarController.swift */; };
+		1797DD10202B95BE001E8D13 /* EFPTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797DD0F202B95BE001E8D13 /* EFPTabViewController.swift */; };
+		1797DD13202BA26F001E8D13 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797DD12202BA26F001E8D13 /* Bundle+Extension.swift */; };
+		1797DD15202BA4B5001E8D13 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797DD14202BA4B5001E8D13 /* UIColor+Extension.swift */; };
 		17A2F2272021D67E009A4682 /* RecentSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A2F2262021D67E009A4682 /* RecentSession.swift */; };
-		17A2F22A20220953009A4682 /* RecentSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A2F22820220953009A4682 /* RecentSessionCell.swift */; };
-		17A2F22B20220953009A4682 /* RecentSessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A2F22920220953009A4682 /* RecentSessionCell.xib */; };
-		17A2F22D20220A49009A4682 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A2F22C20220A49009A4682 /* AvatarView.swift */; };
-		17C66CE42023FD1600999485 /* RecentSessionRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C66CE32023FD1600999485 /* RecentSessionRepresentable.swift */; };
-		17C66CE62024020900999485 /* RecentSessionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C66CE52024020900999485 /* RecentSessionCellViewModel.swift */; };
-		17C66CEA20243D5100999485 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C66CE920243D5100999485 /* SearchResultViewController.swift */; };
+		17ABDE0E202B8452009ED844 /* EFPStudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ABDE0D202B8452009ED844 /* EFPStudyViewController.swift */; };
+		17ABDE11202B8483009ED844 /* EFPScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ABDE10202B8483009ED844 /* EFPScheduleViewController.swift */; };
+		17ABDE13202B84DD009ED844 /* StudyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ABDE12202B84DD009ED844 /* StudyViewModel.swift */; };
+		17ABDE15202B8512009ED844 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ABDE14202B8512009ED844 /* HomeViewModel.swift */; };
+		17ABDE17202B8522009ED844 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ABDE16202B8522009ED844 /* ScheduleViewModel.swift */; };
+		17B22C25202C0D6300662526 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B22C24202C0D6300662526 /* SceneCoordinator.swift */; };
+		17B22C9C202DE27000662526 /* EFPScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B22C9B202DE27000662526 /* EFPScene.swift */; };
+		17B22C9F202DE9A100662526 /* EFPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B22C9E202DE9A100662526 /* EFPRouter.swift */; };
+		17B22CA1202DF39800662526 /* UITabBarItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B22CA0202DF39800662526 /* UITabBarItem+Extension.swift */; };
+		17B22CA6202E084300662526 /* EFPLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B22CA5202E084300662526 /* EFPLocalization.swift */; };
+		17C66CEA20243D5100999485 /* EFPSessionSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C66CE920243D5100999485 /* EFPSessionSearchResultViewController.swift */; };
 		17C66CEE20245A5800999485 /* SearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C66CED20245A5800999485 /* SearchResultViewModel.swift */; };
 		17C66CF120245B9200999485 /* SectionOfRecentSearchRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C66CF020245B9200999485 /* SectionOfRecentSearchRecord.swift */; };
 		17C66CF420245C5300999485 /* RecentSearchRecordStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C66CF320245C5300999485 /* RecentSearchRecordStore.swift */; };
 		17C66CF62025503F00999485 /* RecentSearchRecordStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C66CF52025503F00999485 /* RecentSearchRecordStoreTests.swift */; };
 		17D1A31C201EDE2C007381F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A31B201EDE2C007381F4 /* AppDelegate.swift */; };
-		17D1A321201EDE2C007381F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17D1A31F201EDE2C007381F4 /* Main.storyboard */; };
 		17D1A323201EDE2C007381F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17D1A322201EDE2C007381F4 /* Assets.xcassets */; };
 		17D1A326201EDE2C007381F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17D1A324201EDE2C007381F4 /* LaunchScreen.storyboard */; };
 		17D1A33C201EDE2C007381F4 /* EFPV2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A33B201EDE2C007381F4 /* EFPV2UITests.swift */; };
 		17D1A34E201EE25C007381F4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A34D201EE25C007381F4 /* LoginViewModel.swift */; };
-		17D1A350201EE264007381F4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A34F201EE264007381F4 /* MainViewModel.swift */; };
+		17D1A350201EE264007381F4 /* RecentSessionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A34F201EE264007381F4 /* RecentSessionListViewModel.swift */; };
 		17D1A352201EE66F007381F4 /* LoginSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A351201EE66F007381F4 /* LoginSpec.swift */; };
 		17D1A356201EFDCA007381F4 /* OAuthConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A355201EFDCA007381F4 /* OAuthConstant.swift */; };
 		17D1A358201EFEA0007381F4 /* OAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A357201EFEA0007381F4 /* OAuthService.swift */; };
 		17D1A35A201F0119007381F4 /* OAuthServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A359201F0119007381F4 /* OAuthServiceTests.swift */; };
 		17D1A35C201F054C007381F4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17D1A35B201F054C007381F4 /* Login.storyboard */; };
-		17D1A361201F05AB007381F4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A360201F05AB007381F4 /* LoginViewController.swift */; };
-		17D1A363201F05B2007381F4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A362201F05B2007381F4 /* MainViewController.swift */; };
+		17D1A361201F05AB007381F4 /* EFPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A360201F05AB007381F4 /* EFPLoginViewController.swift */; };
+		17D1A363201F05B2007381F4 /* EFPRecentSessionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A362201F05B2007381F4 /* EFPRecentSessionListViewController.swift */; };
 		17D1A36B201F067C007381F4 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A366201F067C007381F4 /* Scene.swift */; };
 		17D1A36C201F067C007381F4 /* Scene+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A367201F067C007381F4 /* Scene+ViewController.swift */; };
 		17D1A36D201F067C007381F4 /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A368201F067C007381F4 /* SceneCoordinatorType.swift */; };
 		17D1A36E201F067C007381F4 /* TransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A369201F067C007381F4 /* TransitionType.swift */; };
-		17D1A36F201F067C007381F4 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A36A201F067C007381F4 /* SceneCoordinator.swift */; };
 		17D1A7E720201B97007381F4 /* NIMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A7E620201B97007381F4 /* NIMService.swift */; };
 		17D1A7E920201DF0007381F4 /* NIMSDK+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A7E820201DF0007381F4 /* NIMSDK+Rx.swift */; };
 		17D1A7EB20202099007381F4 /* NIMConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A7EA20202099007381F4 /* NIMConstant.swift */; };
@@ -169,6 +191,9 @@
 		17D1A99020216890007381F4 /* NIMKitColorButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A91020216890007381F4 /* NIMKitColorButtonCell.m */; };
 		17D1A99120216890007381F4 /* NIMKitIndependentModeExtraInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A91220216890007381F4 /* NIMKitIndependentModeExtraInfo.m */; };
 		17D1A99220216890007381F4 /* NIMKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A91620216890007381F4 /* NIMKit.m */; };
+		17E9880E202EA19000EC54CB /* EFPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9880D202EA19000EC54CB /* EFPHomeViewController.swift */; };
+		17E98812202EA81700EC54CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17E98811202EA81700EC54CB /* Localizable.strings */; };
+		17E98814202EAAF700EC54CB /* EFPRootScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E98813202EAAF700EC54CB /* EFPRootScene.swift */; };
 		A17C1180A8A20A82D013EFD0 /* Pods_EFPV2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847CDEC76C048AF2DCF58CAB /* Pods_EFPV2UITests.framework */; };
 		B634B178A8615D196891C3B5 /* Pods_EFPV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9759EFFF5E93495DE32806 /* Pods_EFPV2.framework */; };
 		C7618A512A858718D6533C87 /* Pods_EFPV2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BC4C733D47814850B3184A /* Pods_EFPV2Tests.framework */; };
@@ -193,25 +218,49 @@
 
 /* Begin PBXFileReference section */
 		12B61EEFB71C6DE176B958A5 /* Pods-EFPV2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EFPV2UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EFPV2UITests/Pods-EFPV2UITests.release.xcconfig"; sourceTree = "<group>"; };
-		1728C75F202721440086E527 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
-		1728C7622027F07A0086E527 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		171B5417202F4C8B00686BF5 /* EFPRecentSessionScene+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EFPRecentSessionScene+ViewController.swift"; sourceTree = "<group>"; };
+		1728C75F202721440086E527 /* EFPSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPSessionViewController.swift; sourceTree = "<group>"; };
+		1728C7622027F07A0086E527 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
+		1748488C202FDB89000C7BEC /* assets-images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "assets-images.swift"; path = "EFPV2/New Group/assets-images.swift"; sourceTree = SOURCE_ROOT; };
 		17536F2220262BF700B365A4 /* ConfigureSearchbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureSearchbar.swift; sourceTree = "<group>"; };
-		17A2770D2026A244002A9992 /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
+		1775986020294B50004236EB /* VideoViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewItem.swift; sourceTree = "<group>"; };
+		1775986220294C32004236EB /* FullVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullVideoViewController.swift; sourceTree = "<group>"; };
+		1775988920297145004236EB /* RecentSessionListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSessionListCellViewModel.swift; sourceTree = "<group>"; };
+		1775988D2029825B004236EB /* RecentSessionListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSessionListViewModelTests.swift; sourceTree = "<group>"; };
+		177598BA202AD05E004236EB /* GroupProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupProfileViewModel.swift; sourceTree = "<group>"; };
+		177598BE202AD6E5004236EB /* TeamClientCustomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamClientCustomInfo.swift; sourceTree = "<group>"; };
+		177598C0202ADAD7004236EB /* GroupProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupProfileViewModelTests.swift; sourceTree = "<group>"; };
+		177598C2202ADB83004236EB /* MockSceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSceneCoordinator.swift; sourceTree = "<group>"; };
+		177FEC65202B366100E2CAFB /* FullVideoPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullVideoPlayerViewModel.swift; sourceTree = "<group>"; };
+		177FEC67202B41FD00E2CAFB /* CustomViewControllerTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewControllerTransitioning.swift; sourceTree = "<group>"; };
+		177FEC69202B436600E2CAFB /* CustomPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
+		1795CAE52028B4CB006DD9F0 /* EFPSessionFullImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPSessionFullImageViewController.swift; sourceTree = "<group>"; };
+		1795CAE82028B588006DD9F0 /* SessionImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionImageViewModel.swift; sourceTree = "<group>"; };
+		1795CAEB2028B82D006DD9F0 /* GalleryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItem.swift; sourceTree = "<group>"; };
+		1797DD0D202B8FD7001E8D13 /* AppDelegate+tabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+tabBarController.swift"; sourceTree = "<group>"; };
+		1797DD0F202B95BE001E8D13 /* EFPTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPTabViewController.swift; sourceTree = "<group>"; };
+		1797DD12202BA26F001E8D13 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		1797DD14202BA4B5001E8D13 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		17A2F2262021D67E009A4682 /* RecentSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSession.swift; sourceTree = "<group>"; };
-		17A2F22820220953009A4682 /* RecentSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSessionCell.swift; sourceTree = "<group>"; };
-		17A2F22920220953009A4682 /* RecentSessionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentSessionCell.xib; sourceTree = "<group>"; };
-		17A2F22C20220A49009A4682 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		17A2F2312022DB58009A4682 /* TestPG.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = TestPG.playground; path = EFPV2/TestPG.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		17C66CE32023FD1600999485 /* RecentSessionRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSessionRepresentable.swift; sourceTree = "<group>"; };
-		17C66CE52024020900999485 /* RecentSessionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSessionCellViewModel.swift; sourceTree = "<group>"; };
-		17C66CE920243D5100999485 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		17ABDE0D202B8452009ED844 /* EFPStudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPStudyViewController.swift; sourceTree = "<group>"; };
+		17ABDE10202B8483009ED844 /* EFPScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPScheduleViewController.swift; sourceTree = "<group>"; };
+		17ABDE12202B84DD009ED844 /* StudyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewModel.swift; sourceTree = "<group>"; };
+		17ABDE14202B8512009ED844 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		17ABDE16202B8522009ED844 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		17B22C24202C0D6300662526 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
+		17B22C9B202DE27000662526 /* EFPScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPScene.swift; sourceTree = "<group>"; };
+		17B22C9E202DE9A100662526 /* EFPRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPRouter.swift; sourceTree = "<group>"; };
+		17B22CA0202DF39800662526 /* UITabBarItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+Extension.swift"; sourceTree = "<group>"; };
+		17B22CA5202E084300662526 /* EFPLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPLocalization.swift; sourceTree = "<group>"; };
+		17B22CA7202E0DAA00662526 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		17C66CE920243D5100999485 /* EFPSessionSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPSessionSearchResultViewController.swift; sourceTree = "<group>"; };
 		17C66CED20245A5800999485 /* SearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewModel.swift; sourceTree = "<group>"; };
 		17C66CF020245B9200999485 /* SectionOfRecentSearchRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfRecentSearchRecord.swift; sourceTree = "<group>"; };
 		17C66CF320245C5300999485 /* RecentSearchRecordStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchRecordStore.swift; sourceTree = "<group>"; };
 		17C66CF52025503F00999485 /* RecentSearchRecordStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchRecordStoreTests.swift; sourceTree = "<group>"; };
 		17D1A318201EDE2C007381F4 /* EFPV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EFPV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D1A31B201EDE2C007381F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		17D1A320201EDE2C007381F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17D1A322201EDE2C007381F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17D1A325201EDE2C007381F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17D1A327201EDE2C007381F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -221,19 +270,18 @@
 		17D1A33B201EDE2C007381F4 /* EFPV2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPV2UITests.swift; sourceTree = "<group>"; };
 		17D1A33D201EDE2C007381F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17D1A34D201EE25C007381F4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		17D1A34F201EE264007381F4 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		17D1A34F201EE264007381F4 /* RecentSessionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSessionListViewModel.swift; sourceTree = "<group>"; };
 		17D1A351201EE66F007381F4 /* LoginSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSpec.swift; sourceTree = "<group>"; };
 		17D1A355201EFDCA007381F4 /* OAuthConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthConstant.swift; sourceTree = "<group>"; };
 		17D1A357201EFEA0007381F4 /* OAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthService.swift; sourceTree = "<group>"; };
 		17D1A359201F0119007381F4 /* OAuthServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthServiceTests.swift; sourceTree = "<group>"; };
 		17D1A35B201F054C007381F4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		17D1A360201F05AB007381F4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		17D1A362201F05B2007381F4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		17D1A360201F05AB007381F4 /* EFPLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPLoginViewController.swift; sourceTree = "<group>"; };
+		17D1A362201F05B2007381F4 /* EFPRecentSessionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPRecentSessionListViewController.swift; sourceTree = "<group>"; };
 		17D1A366201F067C007381F4 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		17D1A367201F067C007381F4 /* Scene+ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scene+ViewController.swift"; sourceTree = "<group>"; };
 		17D1A368201F067C007381F4 /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
 		17D1A369201F067C007381F4 /* TransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionType.swift; sourceTree = "<group>"; };
-		17D1A36A201F067C007381F4 /* SceneCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		17D1A516201F2E54007381F4 /* EFPV2-Header-Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EFPV2-Header-Bridging.h"; sourceTree = "<group>"; };
 		17D1A7E620201B97007381F4 /* NIMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIMService.swift; sourceTree = "<group>"; };
 		17D1A7E820201DF0007381F4 /* NIMSDK+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NIMSDK+Rx.swift"; sourceTree = "<group>"; };
@@ -502,6 +550,9 @@
 		17D1A91420216890007381F4 /* NIMKitDependency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMKitDependency.h; sourceTree = "<group>"; };
 		17D1A91520216890007381F4 /* NIMCommonTableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMCommonTableData.h; sourceTree = "<group>"; };
 		17D1A91620216890007381F4 /* NIMKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIMKit.m; sourceTree = "<group>"; };
+		17E9880D202EA19000EC54CB /* EFPHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPHomeViewController.swift; sourceTree = "<group>"; };
+		17E98811202EA81700EC54CB /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		17E98813202EAAF700EC54CB /* EFPRootScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPRootScene.swift; sourceTree = "<group>"; };
 		18BC4C733D47814850B3184A /* Pods_EFPV2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EFPV2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D2A29029979D8381353B76 /* Pods-EFPV2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EFPV2UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EFPV2UITests/Pods-EFPV2UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4D9759EFFF5E93495DE32806 /* Pods_EFPV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EFPV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -540,28 +591,126 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1728C75E202721320086E527 /* Message */ = {
+		1728C75E202721320086E527 /* Session */ = {
 			isa = PBXGroup;
 			children = (
+				1728C75F202721440086E527 /* EFPSessionViewController.swift */,
+				1795CAE52028B4CB006DD9F0 /* EFPSessionFullImageViewController.swift */,
+				1795CAE32028B466006DD9F0 /* SessionFullImageViewController */,
+				17759888202958A4004236EB /* GroupProfileViewController */,
+				1775985D20294507004236EB /* SessionFullVideoViewController */,
 				1728C7612027F06C0086E527 /* ViewModel */,
-				1728C75F202721440086E527 /* MessageViewController.swift */,
 			);
-			path = Message;
+			path = Session;
 			sourceTree = "<group>";
 		};
 		1728C7612027F06C0086E527 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1728C7622027F07A0086E527 /* MessageViewModel.swift */,
+				1728C7622027F07A0086E527 /* SessionViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1748488B202FDB2A000C7BEC /* AssetsManager */ = {
+			isa = PBXGroup;
+			children = (
+				1748488C202FDB89000C7BEC /* assets-images.swift */,
+			);
+			name = AssetsManager;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		1775985D20294507004236EB /* SessionFullVideoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1775986220294C32004236EB /* FullVideoViewController.swift */,
+				1775985F20294B44004236EB /* Model */,
+				1775985E20294523004236EB /* ViewModel */,
+			);
+			path = SessionFullVideoViewController;
+			sourceTree = "<group>";
+		};
+		1775985E20294523004236EB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				177FEC65202B366100E2CAFB /* FullVideoPlayerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1775985F20294B44004236EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1775986020294B50004236EB /* VideoViewItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		17759888202958A4004236EB /* GroupProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				177598BD202AD6B5004236EB /* Model */,
+				177598B9202AD03C004236EB /* ViewModel */,
+			);
+			path = GroupProfileViewController;
+			sourceTree = "<group>";
+		};
+		177598B9202AD03C004236EB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				177598BA202AD05E004236EB /* GroupProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		177598BD202AD6B5004236EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				177598BE202AD6E5004236EB /* TeamClientCustomInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1795CAE32028B466006DD9F0 /* SessionFullImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1795CAEA2028B7FA006DD9F0 /* Model */,
+				1795CAE42028B4AE006DD9F0 /* ViewModel */,
+			);
+			path = SessionFullImageViewController;
+			sourceTree = "<group>";
+		};
+		1795CAE42028B4AE006DD9F0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1795CAE82028B588006DD9F0 /* SessionImageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1795CAEA2028B7FA006DD9F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1795CAEB2028B82D006DD9F0 /* GalleryItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1797DD11202BA24D001E8D13 /* Extenstions */ = {
+			isa = PBXGroup;
+			children = (
+				1797DD14202BA4B5001E8D13 /* UIColor+Extension.swift */,
+				1797DD12202BA26F001E8D13 /* Bundle+Extension.swift */,
+			);
+			path = Extenstions;
 			sourceTree = "<group>";
 		};
 		17A2F22E202231DC009A4682 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				17D1A34F201EE264007381F4 /* MainViewModel.swift */,
-				17C66CE52024020900999485 /* RecentSessionCellViewModel.swift */,
+				17D1A34F201EE264007381F4 /* RecentSessionListViewModel.swift */,
+				1775988920297145004236EB /* RecentSessionListCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -569,17 +718,66 @@
 		17A2F22F202231FE009A4682 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				17A2F22820220953009A4682 /* RecentSessionCell.swift */,
-				17A2F22C20220A49009A4682 /* AvatarView.swift */,
-				17A2F22920220953009A4682 /* RecentSessionCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		17ABDE08202B8423009ED844 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				17ABDE14202B8512009ED844 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		17ABDE0B202B843B009ED844 /* Study */ = {
+			isa = PBXGroup;
+			children = (
+				17ABDE0C202B8440009ED844 /* ViewModel */,
+			);
+			path = Study;
+			sourceTree = "<group>";
+		};
+		17ABDE0C202B8440009ED844 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				17ABDE12202B84DD009ED844 /* StudyViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		17ABDE0F202B845B009ED844 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				17ABDE16202B8522009ED844 /* ScheduleViewModel.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		17B22C9A202DE21F00662526 /* EFPScene */ = {
+			isa = PBXGroup;
+			children = (
+				17B22C9E202DE9A100662526 /* EFPRouter.swift */,
+				17B22C9B202DE27000662526 /* EFPScene.swift */,
+				171B5417202F4C8B00686BF5 /* EFPRecentSessionScene+ViewController.swift */,
+				17E98813202EAAF700EC54CB /* EFPRootScene.swift */,
+				17B22CA0202DF39800662526 /* UITabBarItem+Extension.swift */,
+			);
+			path = EFPScene;
+			sourceTree = "<group>";
+		};
+		17B22CA4202E080D00662526 /* Locolization */ = {
+			isa = PBXGroup;
+			children = (
+				17B22CA5202E084300662526 /* EFPLocalization.swift */,
+				17E98811202EA81700EC54CB /* Localizable.strings */,
+			);
+			path = Locolization;
 			sourceTree = "<group>";
 		};
 		17C66CE22023FCD800999485 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				17C66CE32023FD1600999485 /* RecentSessionRepresentable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -591,7 +789,6 @@
 				17C66CF220245C2900999485 /* DataStore */,
 				17C66CEF20245B6E00999485 /* Model */,
 				17C66CEC20245A2F00999485 /* ViewModel */,
-				17C66CE920243D5100999485 /* SearchResultViewController.swift */,
 			);
 			path = SearchViewController;
 			sourceTree = "<group>";
@@ -654,12 +851,20 @@
 		17D1A31A201EDE2C007381F4 /* EFPV2 */ = {
 			isa = PBXGroup;
 			children = (
+				1748488B202FDB2A000C7BEC /* AssetsManager */,
+				17D1A35F201F0595007381F4 /* RecentSessionList */,
+				1728C75E202721320086E527 /* Session */,
+				17D1A35E201F058C007381F4 /* Login */,
+				17E9880C202EA0B500EC54CB /* Main */,
+				17B22CA4202E080D00662526 /* Locolization */,
+				17B22C9A202DE21F00662526 /* EFPScene */,
+				1797DD11202BA24D001E8D13 /* Extenstions */,
 				17D1A7F120216890007381F4 /* NIMKit */,
 				17D1A7DF201F595B007381F4 /* Rx */,
 				17D1A365201F067C007381F4 /* Scene */,
 				17D1A35D201F0582007381F4 /* ViewControllers */,
 				17D1A353201EFDAE007381F4 /* Service */,
-				17D1A31B201EDE2C007381F4 /* AppDelegate.swift */,
+				1797DD0D202B8FD7001E8D13 /* AppDelegate+tabBarController.swift */,
 				17D1A516201F2E54007381F4 /* EFPV2-Header-Bridging.h */,
 				17D1A34B201EE0CA007381F4 /* Assets */,
 			);
@@ -671,10 +876,12 @@
 			children = (
 				17D1A7EC2020211C007381F4 /* NIMSDKTests.swift */,
 				17D1A359201F0119007381F4 /* OAuthServiceTests.swift */,
+				17C66CF52025503F00999485 /* RecentSearchRecordStoreTests.swift */,
+				1775988D2029825B004236EB /* RecentSessionListViewModelTests.swift */,
+				177598C0202ADAD7004236EB /* GroupProfileViewModelTests.swift */,
+				177598C2202ADB83004236EB /* MockSceneCoordinator.swift */,
 				17D1A351201EE66F007381F4 /* LoginSpec.swift */,
 				17D1A332201EDE2C007381F4 /* Info.plist */,
-				17C66CF52025503F00999485 /* RecentSearchRecordStoreTests.swift */,
-				17A2770D2026A244002A9992 /* MainViewModelTests.swift */,
 			);
 			path = EFPV2Tests;
 			sourceTree = "<group>";
@@ -691,7 +898,6 @@
 		17D1A34B201EE0CA007381F4 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				17D1A31F201EDE2C007381F4 /* Main.storyboard */,
 				17D1A322201EDE2C007381F4 /* Assets.xcassets */,
 				17D1A324201EDE2C007381F4 /* LaunchScreen.storyboard */,
 				17D1A327201EDE2C007381F4 /* Info.plist */,
@@ -720,9 +926,9 @@
 		17D1A35D201F0582007381F4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1728C75E202721320086E527 /* Message */,
-				17D1A35F201F0595007381F4 /* Main */,
-				17D1A35E201F058C007381F4 /* Login */,
+				17ABDE0F202B845B009ED844 /* Schedule */,
+				17ABDE0B202B843B009ED844 /* Study */,
+				17ABDE08202B8423009ED844 /* Home */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -731,32 +937,36 @@
 			isa = PBXGroup;
 			children = (
 				17D1A34C201EE241007381F4 /* ViewModel */,
-				17D1A360201F05AB007381F4 /* LoginViewController.swift */,
+				17D1A360201F05AB007381F4 /* EFPLoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
 		};
-		17D1A35F201F0595007381F4 /* Main */ = {
+		17D1A35F201F0595007381F4 /* RecentSessionList */ = {
 			isa = PBXGroup;
 			children = (
+				17D1A362201F05B2007381F4 /* EFPRecentSessionListViewController.swift */,
+				17C66CE920243D5100999485 /* EFPSessionSearchResultViewController.swift */,
 				17C66CEB2024592200999485 /* SearchViewController */,
-				17D1A362201F05B2007381F4 /* MainViewController.swift */,
 				17C66CE22023FCD800999485 /* Protocol */,
 				17A2F22E202231DC009A4682 /* ViewModel */,
 				17A2F22F202231FE009A4682 /* View */,
 				17D1A7F020206483007381F4 /* Model */,
 			);
-			path = Main;
+			path = RecentSessionList;
 			sourceTree = "<group>";
 		};
 		17D1A365201F067C007381F4 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				1797DD0F202B95BE001E8D13 /* EFPTabViewController.swift */,
 				17D1A366201F067C007381F4 /* Scene.swift */,
 				17D1A367201F067C007381F4 /* Scene+ViewController.swift */,
 				17D1A368201F067C007381F4 /* SceneCoordinatorType.swift */,
 				17D1A369201F067C007381F4 /* TransitionType.swift */,
-				17D1A36A201F067C007381F4 /* SceneCoordinator.swift */,
+				17B22C24202C0D6300662526 /* SceneCoordinator.swift */,
+				177FEC67202B41FD00E2CAFB /* CustomViewControllerTransitioning.swift */,
+				177FEC69202B436600E2CAFB /* CustomPresentationController.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -1305,6 +1515,17 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
+		17E9880C202EA0B500EC54CB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				17D1A31B201EDE2C007381F4 /* AppDelegate.swift */,
+				17E9880D202EA19000EC54CB /* EFPHomeViewController.swift */,
+				17ABDE10202B8483009ED844 /* EFPScheduleViewController.swift */,
+				17ABDE0D202B8452009ED844 /* EFPStudyViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		3E35CABEDB1FFDBA08B8743C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1401,6 +1622,7 @@
 		17D1A310201EDE2C007381F4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = EFP;
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = JayKong;
@@ -1428,6 +1650,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 17D1A30F201EDE2C007381F4;
 			productRefGroup = 17D1A319201EDE2C007381F4 /* Products */;
@@ -1449,10 +1672,9 @@
 				17D1A35C201F054C007381F4 /* Login.storyboard in Resources */,
 				17D1A91820216890007381F4 /* NIMKitEmoticon.bundle in Resources */,
 				17D1A326201EDE2C007381F4 /* LaunchScreen.storyboard in Resources */,
+				17E98812202EA81700EC54CB /* Localizable.strings in Resources */,
 				17D1A91720216890007381F4 /* NIMKitResource.bundle in Resources */,
 				17D1A323201EDE2C007381F4 /* Assets.xcassets in Resources */,
-				17A2F22B20220953009A4682 /* RecentSessionCell.xib in Resources */,
-				17D1A321201EDE2C007381F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1528,12 +1750,14 @@
 				"${BUILT_PRODUCTS_DIR}/BadgeSwift/BadgeSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/M80AttributedLabel/M80AttributedLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
 			);
@@ -1543,12 +1767,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BadgeSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M80AttributedLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
 			);
@@ -1659,7 +1885,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-EFPV2Tests/Pods-EFPV2Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
@@ -1670,7 +1895,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
@@ -1716,11 +1940,15 @@
 				17D1A96F20216890007381F4 /* NIMKitLocationPoint.m in Sources */,
 				17D1A97320216890007381F4 /* NIMSessionTimestampCell.m in Sources */,
 				17C66CEE20245A5800999485 /* SearchResultViewModel.swift in Sources */,
+				1795CAE62028B4CB006DD9F0 /* EFPSessionFullImageViewController.swift in Sources */,
+				17B22CA1202DF39800662526 /* UITabBarItem+Extension.swift in Sources */,
 				17D1A93720216890007381F4 /* NIMGrowingInternalTextView.m in Sources */,
 				17D1A7EB20202099007381F4 /* NIMConstant.swift in Sources */,
 				17D1A97020216890007381F4 /* NIMMessageMaker.m in Sources */,
 				17C66CF420245C5300999485 /* RecentSearchRecordStore.swift in Sources */,
+				1748488D202FDB89000C7BEC /* assets-images.swift in Sources */,
 				17D1A92720216890007381F4 /* NIMKitRobotTemplateLayout.m in Sources */,
+				1797DD10202B95BE001E8D13 /* EFPTabViewController.swift in Sources */,
 				17D1A98E20216890007381F4 /* NIMKitSwitcherCell.m in Sources */,
 				17D1A94120216890007381F4 /* NIMLoadProgressView.m in Sources */,
 				17D1A95420216890007381F4 /* NIMTimestampModel.m in Sources */,
@@ -1736,7 +1964,6 @@
 				17D1A97A20216890007381F4 /* NIMSessionFileTransContentView.m in Sources */,
 				17D1A94420216890007381F4 /* NIMCreateTeamAnnouncement.m in Sources */,
 				17D1A95220216890007381F4 /* NIMTeamNotifyUpdateViewController.m in Sources */,
-				17C66CE42023FD1600999485 /* RecentSessionRepresentable.swift in Sources */,
 				17D1A95720216890007381F4 /* NIMMediaItem.m in Sources */,
 				17D1A92E20216890007381F4 /* NIMInputMoreContainerView.m in Sources */,
 				17D1A91E20216890007381F4 /* NIMContactPickedView.m in Sources */,
@@ -1745,49 +1972,66 @@
 				17D1A92A20216890007381F4 /* NIMPinyinConverter.m in Sources */,
 				17D1A93E20216890007381F4 /* NIMCustomLeftBarView.m in Sources */,
 				17D1A98820216890007381F4 /* M80AttributedLabel+NIMKit.m in Sources */,
-				1728C7632027F07A0086E527 /* MessageViewModel.swift in Sources */,
+				1728C7632027F07A0086E527 /* SessionViewModel.swift in Sources */,
 				17D1A93F20216890007381F4 /* NIMKitKeyboardInfo.m in Sources */,
 				17D1A97520216890007381F4 /* NIMSessionVideoContentView.m in Sources */,
 				17D1A94720216890007381F4 /* NIMTeamCardRowItem.m in Sources */,
 				17D1A96420216890007381F4 /* NIMTextContentConfig.m in Sources */,
+				177FEC66202B366100E2CAFB /* FullVideoPlayerViewModel.swift in Sources */,
 				17D1A92220216890007381F4 /* NIMKitAuthorizationTool.m in Sources */,
 				17D1A93D20216890007381F4 /* NIMPageView.m in Sources */,
+				1775988A20297145004236EB /* RecentSessionListCellViewModel.swift in Sources */,
 				17D1A95A20216890007381F4 /* NIMSessionListViewController.m in Sources */,
-				17D1A363201F05B2007381F4 /* MainViewController.swift in Sources */,
+				17D1A363201F05B2007381F4 /* EFPRecentSessionListViewController.swift in Sources */,
 				17D1A92020216890007381F4 /* NIMContactSelectConfig.m in Sources */,
 				17D1A94220216890007381F4 /* NIMTeamMemberCardViewController.m in Sources */,
 				17D1A99020216890007381F4 /* NIMKitColorButtonCell.m in Sources */,
+				171B5418202F4C8B00686BF5 /* EFPRecentSessionScene+ViewController.swift in Sources */,
+				17ABDE15202B8512009ED844 /* HomeViewModel.swift in Sources */,
 				17D1A96C20216890007381F4 /* NIMSessionLayoutImpl.m in Sources */,
 				17D1A94820216890007381F4 /* NIMUsrInfoData.m in Sources */,
 				17D1A98A20216890007381F4 /* NIMKitDataProviderImpl.m in Sources */,
 				17D1A7E720201B97007381F4 /* NIMService.swift in Sources */,
 				17D1A93020216890007381F4 /* NIMInputEmoticonTabView.m in Sources */,
 				17D1A95E20216890007381F4 /* NIMLocationContentConfig.m in Sources */,
-				17D1A361201F05AB007381F4 /* LoginViewController.swift in Sources */,
+				17D1A361201F05AB007381F4 /* EFPLoginViewController.swift in Sources */,
 				17D1A92520216890007381F4 /* NIMKitRobotTemplate.m in Sources */,
 				17D1A97120216890007381F4 /* NIMKitMessageAtModel.m in Sources */,
+				17ABDE0E202B8452009ED844 /* EFPStudyViewController.swift in Sources */,
 				17D1A98420216890007381F4 /* NSString+NIMKit.m in Sources */,
 				17D1A98720216890007381F4 /* UIView+NIM.m in Sources */,
+				17E9880E202EA19000EC54CB /* EFPHomeViewController.swift in Sources */,
 				17D1A31C201EDE2C007381F4 /* AppDelegate.swift in Sources */,
 				17D1A92D20216890007381F4 /* NIMInputAudioRecordIndicatorView.m in Sources */,
 				17D1A93120216890007381F4 /* NIMInputEmoticonManager.m in Sources */,
-				1728C760202721440086E527 /* MessageViewController.swift in Sources */,
-				17A2F22A20220953009A4682 /* RecentSessionCell.swift in Sources */,
+				1728C760202721440086E527 /* EFPSessionViewController.swift in Sources */,
 				17D1A91C20216890007381F4 /* NIMGroupedUsrInfo.m in Sources */,
 				17D1A97F20216890007381F4 /* NIMMessageCell.m in Sources */,
-				17C66CEA20243D5100999485 /* SearchResultViewController.swift in Sources */,
+				177FEC6A202B436600E2CAFB /* CustomPresentationController.swift in Sources */,
+				17C66CEA20243D5100999485 /* EFPSessionSearchResultViewController.swift in Sources */,
 				17D1A92420216890007381F4 /* NIMKitTimerHolder.m in Sources */,
 				17D1A92620216890007381F4 /* NIMKitRobotDefaultTemplateParser.m in Sources */,
+				1775986320294C32004236EB /* FullVideoViewController.swift in Sources */,
 				17D1A94E20216890007381F4 /* NIMAdvancedTeamMemberCell.m in Sources */,
 				17C66CF120245B9200999485 /* SectionOfRecentSearchRecord.swift in Sources */,
+				1797DD15202BA4B5001E8D13 /* UIColor+Extension.swift in Sources */,
 				17D1A92B20216890007381F4 /* NIMSpellingCenter.m in Sources */,
 				17D1A95620216890007381F4 /* NIMKitEvent.m in Sources */,
 				17D1A95D20216890007381F4 /* NIMFileContentConfig.m in Sources */,
 				17D1A96320216890007381F4 /* NIMUnsupportContentConfig.m in Sources */,
+				17ABDE11202B8483009ED844 /* EFPScheduleViewController.swift in Sources */,
 				17D1A92320216890007381F4 /* NIMKitResourceResizer.m in Sources */,
 				17D1A94620216890007381F4 /* NIMTeamCardOperationItem.m in Sources */,
+				17ABDE17202B8522009ED844 /* ScheduleViewModel.swift in Sources */,
+				1797DD0E202B8FD7001E8D13 /* AppDelegate+tabBarController.swift in Sources */,
+				17ABDE13202B84DD009ED844 /* StudyViewModel.swift in Sources */,
+				1775986120294B50004236EB /* VideoViewItem.swift in Sources */,
 				17D1A98520216890007381F4 /* UITableView+NIMScrollToBottom.m in Sources */,
+				17E98814202EAAF700EC54CB /* EFPRootScene.swift in Sources */,
+				1797DD13202BA26F001E8D13 /* Bundle+Extension.swift in Sources */,
+				17B22C25202C0D6300662526 /* SceneCoordinator.swift in Sources */,
 				17D1A94020216890007381F4 /* NIMKitNotificationFirer.m in Sources */,
+				17B22CA6202E084300662526 /* EFPLocalization.swift in Sources */,
 				17D1A96220216890007381F4 /* NIMTipContentConfig.m in Sources */,
 				17D1A95B20216890007381F4 /* NIMSessionListCell.m in Sources */,
 				17D1A93420216890007381F4 /* NIMInputEmoticonContainerView.m in Sources */,
@@ -1798,9 +2042,9 @@
 				17D1A92920216890007381F4 /* NIMKitUtil.m in Sources */,
 				17D1A93C20216890007381F4 /* NIMKitTitleView.m in Sources */,
 				17D1A93620216890007381F4 /* NIMGrowingTextView.m in Sources */,
-				17D1A36F201F067C007381F4 /* SceneCoordinator.swift in Sources */,
 				17D1A98020216890007381F4 /* NIMLocationViewController.m in Sources */,
 				17D1A96820216890007381F4 /* NIMSessionDataSourceImpl.m in Sources */,
+				177598BF202AD6E5004236EB /* TeamClientCustomInfo.swift in Sources */,
 				17D1A97720216890007381F4 /* NIMSessionNotificationContentView.m in Sources */,
 				17D1A92F20216890007381F4 /* NIMInputView.m in Sources */,
 				17D1A36C201F067C007381F4 /* Scene+ViewController.swift in Sources */,
@@ -1808,7 +2052,6 @@
 				17D1A98220216890007381F4 /* NSDictionary+NIMKit.m in Sources */,
 				17D1A97D20216890007381F4 /* NIMSessionMessageContentView.m in Sources */,
 				17D1A95F20216890007381F4 /* NIMVideoContentConfig.m in Sources */,
-				17A2F22D20220A49009A4682 /* AvatarView.swift in Sources */,
 				17D1A96D20216890007381F4 /* NIMSessionConfigurator.m in Sources */,
 				17D1A96E20216890007381F4 /* NIMSessionInteractorImpl.m in Sources */,
 				17D1A94A20216890007381F4 /* NIMTeamInfoData.m in Sources */,
@@ -1822,6 +2065,7 @@
 				17D1A93920216890007381F4 /* NIMMemberGroupView.m in Sources */,
 				17D1A91B20216890007381F4 /* NIMGroupedData.m in Sources */,
 				17D1A91920216890007381F4 /* NIMContactDataItem.m in Sources */,
+				1795CAEC2028B82D006DD9F0 /* GalleryItem.swift in Sources */,
 				17536F2320262BF700B365A4 /* ConfigureSearchbar.swift in Sources */,
 				17D1A94920216890007381F4 /* NIMCardMemberItem.m in Sources */,
 				17D1A98C20216890007381F4 /* NIMCommonTableDelegate.m in Sources */,
@@ -1839,23 +2083,27 @@
 				17D1A98D20216890007381F4 /* NIMCommonTableData.m in Sources */,
 				17D1A36E201F067C007381F4 /* TransitionType.swift in Sources */,
 				17D1A98920216890007381F4 /* NIMKitProgressHUD.m in Sources */,
+				17B22C9C202DE27000662526 /* EFPScene.swift in Sources */,
 				17D1A97B20216890007381F4 /* NIMSessionTextContentView.m in Sources */,
 				17D1A93820216890007381F4 /* NIMBadgeView.m in Sources */,
-				17C66CE62024020900999485 /* RecentSessionCellViewModel.swift in Sources */,
 				17D1A96B20216890007381F4 /* NIMKitAudioCenter.m in Sources */,
 				17D1A95120216890007381F4 /* NIMTeamCardHeaderCell.m in Sources */,
 				17D1A95C20216890007381F4 /* NIMRobotContentConfig.m in Sources */,
+				177598BB202AD05E004236EB /* GroupProfileViewModel.swift in Sources */,
 				17D1A34E201EE25C007381F4 /* LoginViewModel.swift in Sources */,
 				17D1A97620216890007381F4 /* NIMSessionAudioContentView.m in Sources */,
 				17D1A97920216890007381F4 /* NIMSessionImageContentView.m in Sources */,
-				17D1A350201EE264007381F4 /* MainViewModel.swift in Sources */,
+				17D1A350201EE264007381F4 /* RecentSessionListViewModel.swift in Sources */,
+				177FEC68202B41FD00E2CAFB /* CustomViewControllerTransitioning.swift in Sources */,
 				17D1A94F20216890007381F4 /* NIMTeamAnnouncementListCell.m in Sources */,
 				17D1A7E920201DF0007381F4 /* NIMSDK+Rx.swift in Sources */,
+				1795CAE92028B588006DD9F0 /* SessionImageViewModel.swift in Sources */,
 				17D1A94520216890007381F4 /* NIMTeamMemberListViewController.m in Sources */,
 				17A2F2272021D67E009A4682 /* RecentSession.swift in Sources */,
 				17D1A92820216890007381F4 /* NIMKitDevice.m in Sources */,
 				17D1A96620216890007381F4 /* NIMBaseSessionContentConfig.m in Sources */,
 				17D1A95020216890007381F4 /* NIMTeamMemberCardHeaderCell.m in Sources */,
+				17B22C9F202DE9A100662526 /* EFPRouter.swift in Sources */,
 				17D1A98F20216890007381F4 /* NIMKitConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1865,10 +2113,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				17D1A7ED2020211C007381F4 /* NIMSDKTests.swift in Sources */,
+				1775988E2029825B004236EB /* RecentSessionListViewModelTests.swift in Sources */,
+				177598C1202ADAD7004236EB /* GroupProfileViewModelTests.swift in Sources */,
 				17D1A352201EE66F007381F4 /* LoginSpec.swift in Sources */,
 				17D1A35A201F0119007381F4 /* OAuthServiceTests.swift in Sources */,
 				17C66CF62025503F00999485 /* RecentSearchRecordStoreTests.swift in Sources */,
-				17A2770E2026A244002A9992 /* MainViewModelTests.swift in Sources */,
+				177598C3202ADB83004236EB /* MockSceneCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1896,18 +2146,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		17D1A31F201EDE2C007381F4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				17D1A320201EDE2C007381F4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		17D1A324201EDE2C007381F4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				17D1A325201EDE2C007381F4 /* Base */,
+				17B22CA7202E0DAA00662526 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1919,6 +2162,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1978,6 +2222,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2032,6 +2277,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3832S6FB5R;
 				INFOPLIST_FILE = "$(SRCROOT)/EFPV2/Assets/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2048,6 +2294,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3832S6FB5R;
 				INFOPLIST_FILE = "$(SRCROOT)/EFPV2/Assets/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2065,6 +2312,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3832S6FB5R;
 				INFOPLIST_FILE = EFPV2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ef.com.EFPV2Tests;
@@ -2082,6 +2330,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3832S6FB5R;
 				INFOPLIST_FILE = EFPV2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ef.com.EFPV2Tests;
@@ -2098,6 +2347,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3832S6FB5R;
 				INFOPLIST_FILE = EFPV2UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ef.com.EFPV2UITests;
@@ -2114,6 +2364,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3832S6FB5R;
 				INFOPLIST_FILE = EFPV2UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ef.com.EFPV2UITests;

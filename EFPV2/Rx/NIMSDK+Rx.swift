@@ -34,6 +34,9 @@ extension Reactive where Base: NIMSDK {
     static func login(account: String) -> Observable<Bool> {
 
         return Observable<Bool>.create({ observer in
+
+            // shared.loginManager.autoLogin("test111", token: NIMConstant.token)
+
             shared.loginManager.login(account, token: NIMConstant.token, completion: { _ in
                 observer.onNext(true)
             })
@@ -56,6 +59,27 @@ extension Reactive where Base: NIMSDK {
     static func totalUnreadCount() -> Observable<Int> {
         return Observable<Int>.create({ (observer) -> Disposable in
             observer.onNext(shared.conversationManager.allUnreadCount())
+
+            return Disposables.create()
+        })
+    }
+
+    static func startNIMSDK() {
+        NIMSDK.rx.register()
+            .subscribe(onNext: { _ in
+                NIMSDK.rx.login(account: "test111")
+            })
+    }
+
+    static func updateTeamCustomInfo(teamId: String, json: String) -> Observable<Bool> {
+        return Observable<Bool>.create({ (observer) -> Disposable in
+            let teamManager = NIMSDK.shared().teamManager
+
+            teamManager.updateTeamCustomInfo(json, teamId: teamId) { _ in
+                observer.onNext(true)
+
+                observer.onCompleted()
+            }
 
             return Disposables.create()
         })

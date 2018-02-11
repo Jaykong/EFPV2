@@ -1,40 +1,32 @@
 //
 //  SceneCoordinator.swift
-//  JKSFViewController
+//  EFPV2
 //
-//  Created by JayKong on 2018/1/28.
+//  Created by JayKong on 2018/2/8.
 //  Copyright © 2018 JayKong. All rights reserved.
 //
 
 import Foundation
-import UIKit
 class SceneCoordinator: SceneCoordinatorType {
-    let window: UIWindow
+
     var currentViewController: UIViewController!
-    required init(window: UIWindow) {
-        self.window = window
-    }
 
     func transitionTo(scene: Scene, type: TransitionType) {
         switch type {
-        case .modal:
-            let viewController = scene.viewController()
-
-            currentViewController.present(viewController, animated: true, completion: nil)
         case .push:
-            let viewController = scene.viewController()
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            let rootViewController = delegate.window?.rootViewController
+            currentViewController = rootViewController
+            rootViewController?.show(scene.viewController(), sender: nil)
 
-            currentViewController.show(viewController, sender: nil)
+        case .modal:
+            currentViewController.present(scene.viewController(), animated: true, completion: {
 
-        case .root:
-            currentViewController = scene.viewController()
-            
-            let navitionController = UINavigationController(rootViewController: currentViewController)
-
-            window.rootViewController = navitionController
+            })
         }
     }
 
     func pop(scene _: Scene) {
+        currentViewController.dismiss(animated: true, completion: nil)
     }
 }

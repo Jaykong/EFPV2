@@ -12,90 +12,52 @@ import RxBlocking
 import RxNimble
 import RxSwift
 import RxTest
+import SwiftyJSON
 import XCTest
-
 class NIMSDKTests: XCTestCase {
-    var scheduler: ConcurrentDispatchQueueScheduler!
-    var subscription: Disposable!
     let disposeBag: DisposeBag = DisposeBag()
+    var qos: ConcurrentDispatchQueueScheduler!
     override func setUp() {
         super.setUp()
-        NIMSDK.rx.register()
-
-        scheduler = ConcurrentDispatchQueueScheduler(qos: .default)
+        // NIMSDK.shared().enableConsoleLog()
+        qos = ConcurrentDispatchQueueScheduler(qos: .default)
     }
 
-    func testRxRegister2() {
-        let loginObservable = NIMSDK.rx.login(account: "test111")
-            .filter({ $0 == true })
+    /*
+     func testRxRegister() {
+     let registerResult = try! NIMSDK.rx.register().toBlocking().first()
+     expect(registerResult) == true
 
-        let convationlistObservalbe = NIMSDK.rx.conversationList()
+     expect(NIMSDK.rx.login(account: NIMConstant.userName)).first == true
 
-        NIMSDK.rx.register()
-            .subscribe(onCompleted: {
-                loginObservable.subscribe(onNext: { _ in
-                    convationlistObservalbe.subscribe(onNext: {
-                        print($0)
-                    }).disposed(by: self.disposeBag)
-                }).disposed(by: self.disposeBag)
-            }).disposed(by: disposeBag)
+     let conversationList = try! NIMSDK.rx.conversationList().toBlocking().first()
+     expect(conversationList!.count).notTo(equal(0))
+     XCTAssert(Thread.current.isMainThread == true)
+
+     print(Thread.current)
+
+     }
+     */
+
+    func testUpdateUserProfileCustomInfoExt() {
+        let testUserExt = expectation(description: "test User Ext")
+
+        let number = NIMUserInfoUpdateTag.ext.rawValue
+
+        NIMSDK.shared().userManager.updateMyUserInfo([number as NSNumber: "{\"isPa\":0}"]) { _ in
+            testUserExt.fulfill()
+        }
+
+        wait(for: [testUserExt], timeout: 5)
     }
 
-    func testRxRegister() {
-        NIMSDK.rx.register()
-            .subscribe(onCompleted: {
-                NIMSDK.rx.login(account: "test111")
-                    .filter({ $0 == true })
-                    .subscribe(onNext: { _ in
-                        NIMSDK.rx.conversationList()
-                            .subscribe(onNext: { sessions in
-                                print(sessions)
-                            }, onError: { err in
-                                print(err)
-                            }, onCompleted: {
-                                print("completed")
-                            }, onDisposed: {
-                                print("disposed")
-                            }).disposed(by: self.disposeBag)
-                    }).disposed(by: self.disposeBag)
+    func testUserProfileCustomInfoExt() {
+        let user = NIMSDK.shared().userManager.userInfo(NIMConstant.userName)
 
-            })
-            .disposed(by: disposeBag)
-    }
+        let json = JSON(parseJSON: user!.userInfo!.ext!)
 
-    func testLoign() {
-        let trueOrFaulse = try! NIMSDK.rx.login(account: "test111")
-            .subscribeOn(scheduler)
-            .toBlocking().first()
-        expect(trueOrFaulse) == true
-    }
-
-//    func testConversationList() {
-//        testLoign()
-//        let result = try! NIMSDK.rx.conversationList()
-//        .subscribeOn(scheduler)
-//        .toBlocking().first()
-//        expect(result?.count) == 1
-    //
-    //
-//    }
-
-    func testConcat() {
-        let register = NIMSDK.rx.register()
-        let login = NIMSDK.rx.login(account: "test111")
-        let registerAndLogin =
-            Observable<Bool>.merge([register, login])
-            // .takeLast(1)
-            // .filter({ $0 == true })
-            .subscribe(onNext: { x in
-                print(x)
-            }, onError: { err in
-                print(err)
-            }, onCompleted: {
-                print("completed")
-            }) {
-                print("onDisposed")
-            }
+        XCTAssert(json["isPa"].intValue == 1)
+        XCTAssert(json["isPa"].intValue == 0)
     }
 
     override func tearDown() {
