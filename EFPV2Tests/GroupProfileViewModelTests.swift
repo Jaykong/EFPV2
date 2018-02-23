@@ -13,7 +13,6 @@ import RxNimble
 import XCTest
 
 class GroupProfileViewModelTests: XCTestCase {
-    let teamId = "316999439"
     let teamManager = NIMSDK.shared().teamManager
 
     override func setUp() {
@@ -59,7 +58,7 @@ class GroupProfileViewModelTests: XCTestCase {
 
         NIMSDK.shared().teamManager.fetchTeamInfo(teamId) { _, team in
 
-            let vm = EFPGroupInfoViewModel(team: team)
+            let vm = EFPGroupInfoViewModel(team: team, session: NIMSession())
             expect(try! vm.groupName.toBlocking(timeout: 5).first()!.parentGroupName).to(equal("parentGroupName5"))
 
             fetchTeamInfo.fulfill()
