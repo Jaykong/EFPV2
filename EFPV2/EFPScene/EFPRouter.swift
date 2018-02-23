@@ -8,6 +8,7 @@
 
 import RxSwift
 import UIKit
+import AVKit
 protocol EFPSceneRouterProtocol {
 
     @discardableResult
@@ -21,6 +22,7 @@ enum EFPTransitionType {
     case root
     case push
     case modal
+    case video
 }
 
 class EFPSceneRouter: EFPSceneRouterProtocol {
@@ -29,7 +31,13 @@ class EFPSceneRouter: EFPSceneRouterProtocol {
     @discardableResult
     func pop() -> Observable<Void> {
         let publishedObject = PublishSubject<Void>()
+        if let presentingViewController = currentViewController.presentingViewController {
+            presentingViewController.dismiss(animated: true, completion: {
+                self.currentViewController = EFPSceneRouter.actionalViewController(for: presentingViewController)
+                publishedObject.onCompleted()
+            })
 
+        } else
         if let navigationController = currentViewController.navigationController {
             navigationController.rx.delegate.sentMessage(#selector(UINavigationControllerDelegate.navigationController(_: didShow: animated:)))
                 .map({ _ in })
@@ -38,12 +46,6 @@ class EFPSceneRouter: EFPSceneRouterProtocol {
             navigationController.popViewController(animated: true)
             self.currentViewController = EFPSceneRouter.actionalViewController(for: navigationController.topViewController!)
 
-        } else if let presentingViewController = currentViewController.presentingViewController{
-            presentingViewController.dismiss(animated: true, completion: {
-                self.currentViewController = EFPSceneRouter.actionalViewController(for: presentingViewController)
-                publishedObject.onCompleted()
-            })
-            
         }
         return publishedObject.asObservable()
     }
@@ -88,6 +90,13 @@ class EFPSceneRouter: EFPSceneRouterProtocol {
                 self.currentViewController = EFPSceneRouter.actionalViewController(for: viewController)
                 publishedObject.onCompleted()
             })
+        case .video:
+
+            currentViewController.present(viewController, animated: true, completion: {
+                if let playerViewController = viewController as? AVPlayerViewController {
+                    playerViewController.player?.play()
+                }
+            })
         }
 
         return publishedObject.asObservable().take(1)
@@ -102,3 +111,4 @@ class EFPSceneRouter: EFPSceneRouterProtocol {
         window?.makeKeyAndVisible()
     }
 }
+

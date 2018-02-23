@@ -44,7 +44,7 @@ class NIMSDKTests: XCTestCase {
 
         let number = NIMUserInfoUpdateTag.ext.rawValue
 
-        NIMSDK.shared().userManager.updateMyUserInfo([number as NSNumber: "{\"isPa\":0}"]) { _ in
+        NIMSDK.shared().userManager.updateMyUserInfo([number as NSNumber: "{\"isPa\":1}"]) { _ in
             testUserExt.fulfill()
         }
 
@@ -57,7 +57,7 @@ class NIMSDKTests: XCTestCase {
         let json = JSON(parseJSON: user!.userInfo!.ext!)
 
         XCTAssert(json["isPa"].intValue == 1)
-        XCTAssert(json["isPa"].intValue == 0)
+       // XCTAssert(json["isPa"].intValue == 0)
     }
 
     override func tearDown() {

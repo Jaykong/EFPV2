@@ -12,50 +12,35 @@ class EFPSessionViewController: NIMSessionViewController {
     var sessionViewModel: SessionViewModel!
 
     @objc func search() {
-        
+        sessionViewModel.onSearchBtnClicked()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.leftItemsSupplementBackButton = false
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: Asset.NavigationBar.naviBack.image, style: .plain, target: self, action: #selector(dismissViewController))
-       
-//        let searchBtn = UIButton(type: .custom)
-//        let searchImage = #imageLiteral(resourceName: "navi_search").withRenderingMode(.alwaysTemplate)
-//
-//        searchBtn.imageView?.tintColor = UIColor.black
-//
-//        searchBtn.setImage(#imageLiteral(resourceName: "navi_search"), for: .normal)
-        
-        
+        navigationItem.arrowBackBarBtn(target: self, action: #selector(dismissViewController))
+
         let searchBarBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "navi_search").withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(EFPSessionViewController.search))
-        searchBarBtn.tintColor = UIColor.black
+        searchBarBtn.tintColor = UIColor.gray
 
-
-       
         let imageView = UIImageView(image: #imageLiteral(resourceName: "icon_session_info_normal"))
+        imageView.isUserInteractionEnabled = true
         let groupBarBtn = UIBarButtonItem(customView: imageView)
 
         navigationItem.rightBarButtonItems = [groupBarBtn, searchBarBtn]
 
-//        let tapgesture = UITapGestureRecognizer(target: self, action: #selector(dismissViewController))
-//        view.addGestureRecognizer(tapgesture)
+        let tapgesture = UITapGestureRecognizer(target: self, action: #selector(groupInfoClicked))
+        imageView.addGestureRecognizer(tapgesture)
 
-//        sessionViewModel.session.subscribe(onNext: { (session) in
-        //
-//            self.session = session
-//        })
-
-        // self.session = sessionViewModel.session!
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    @objc func groupInfoClicked() {
+        sessionViewModel.onGroupInfoClicked()
+    }
     override func onTapCell(_ event: NIMKitEvent!) -> Bool {
         var handle = super.onTapCell(event)
 
@@ -63,10 +48,11 @@ class EFPSessionViewController: NIMSessionViewController {
 
         return handle
     }
-    
-   
+
     @objc func dismissViewController() {
 
         sessionViewModel.onDismissViewController()
     }
+
 }
+

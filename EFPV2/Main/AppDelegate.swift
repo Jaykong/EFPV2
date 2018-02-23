@@ -25,6 +25,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         EFPSceneRouter.shared.transit(to: loginScene, transitionType: .root)
     }
 
+    fileprivate func setupNIMImageCellBubbleBg() {
+        NIMKit.shared().config.rightBubbleSettings.imageSetting.normalBackgroundImage = nil
+        NIMKit.shared().config.rightBubbleSettings.imageSetting.highLightBackgroundImage = nil
+
+        NIMKit.shared().config.leftBubbleSettings.imageSetting.normalBackgroundImage = nil
+        NIMKit.shared().config.leftBubbleSettings.imageSetting.highLightBackgroundImage = nil
+    }
+
+    fileprivate func setupNIMVideoCellBubbleBg() {
+        NIMKit.shared().config.rightBubbleSettings.videoSetting.normalBackgroundImage = nil
+        NIMKit.shared().config.rightBubbleSettings.videoSetting.highLightBackgroundImage = nil
+        
+        NIMKit.shared().config.leftBubbleSettings.videoSetting.normalBackgroundImage = nil
+        NIMKit.shared().config.leftBubbleSettings.videoSetting.highLightBackgroundImage = nil
+    }
+    
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         let option = NIMSDKOption()
@@ -38,7 +54,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         transitToMain()
 
         //transitToLogin()
-        UITabBarItem.setupTabBarItemAttributes2()
+        UITabBarItem.setupTabBarItemAttributes()
+
+        setupNIMImageCellBubbleBg()
+
+        setupNIMVideoCellBubbleBg()
+        
+        
+        //NIMKit.shared().config.rightBubbleSettings.teamNotificationSetting
         return true
     }
 

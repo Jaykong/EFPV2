@@ -11,9 +11,13 @@ import SwiftyJSON
 struct NIMService {
 
     static func userExt() -> Int {
-        let user = NIMSDK.shared().userManager.userInfo(NIMConstant.userName)
+        let tempUser = NIMSDK.shared().userManager.userInfo(NIMConstant.userName)
+        
+        guard let user = tempUser,let userInfo = user.userInfo,let ext = userInfo.ext else {
+            return 0
+        }
 
-        let json = JSON(parseJSON: user!.userInfo!.ext!)
+        let json = JSON(parseJSON: ext)
 
         return json["isPa"].intValue
     }

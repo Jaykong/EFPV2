@@ -7,3 +7,6 @@
 //
 
 #import "NIMKit.h"
+#import "NIMAvatarImageView.h"
+#import "NIMSessionListCell.h"
+#import "NIMBadgeView.h"

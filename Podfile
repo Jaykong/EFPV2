@@ -10,7 +10,7 @@ target 'EFPV2' do
 pod 'RxCocoa'
 pod 'AppAuth'
 pod 'NIMSDK'
-pod 'SDWebImage'
+pod 'SDWebImage', '~> 4.0'
 pod 'Toast'
 pod 'SVProgressHUD'
 pod 'M80AttributedLabel'

@@ -25,10 +25,6 @@ extension EFPRootScene {
             let scenes = TabBarScene.all
 
             var controllers = [UIViewController]()
-            
-            
-            
-            
 
             for scene in scenes {
                 let viewController = scene.viewController()

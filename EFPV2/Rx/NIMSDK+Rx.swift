@@ -84,4 +84,31 @@ extension Reactive where Base: NIMSDK {
             return Disposables.create()
         })
     }
+
+    static func search(session: NIMSession, text: String) -> Observable<[NIMMessage]> {
+        return Observable<[NIMMessage]>.create({ (observer) -> Disposable in
+            let option = NIMMessageSearchOption()
+            option.searchContent = text
+            option.limit = 0
+            option.order = .desc
+            NIMSDK.shared().conversationManager.searchMessages(session, option: option, result: { (error, messages) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    observer.onError(error)
+                    return
+
+                }
+                if let messages = messages {
+                    observer.onNext(messages)
+                }
+                
+                
+
+            })
+
+            return Disposables.create()
+        })
+
+    }
+
 }
