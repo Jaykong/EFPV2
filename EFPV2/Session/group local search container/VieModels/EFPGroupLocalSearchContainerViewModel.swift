@@ -25,6 +25,7 @@ struct EFPGroupLocalSearchContainerViewModel {
     func addResultViewController() {
         let viewModel = EFPGroupLocalSearchResultViewModel(session: session)
         viewModel.controlProperty = controlProperty
+        
         let scene = EFPSessionScene.groupLocalSearchResult(viewModel)
         EFPSceneRouter.shared.transit(to: scene, transitionType: .addChild)
             

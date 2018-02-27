@@ -9,27 +9,53 @@
 import Foundation
 enum EFPContainerChildScene {
     case searchRecord(EFPSearchRecordViewModel)
-      case groupLocalSearchResult(EFPGroupLocalSearchResultViewModel)
+    case groupLocalSearchResult(EFPGroupLocalSearchResultViewModel)
 }
 
 extension EFPContainerChildScene {
-    func viewController(parent:UIViewController) -> UIViewController {
+    func viewController() -> UIViewController {
         switch self {
-        
+
         case let .searchRecord(searchResultViewModel):
             var sessionSearchResultViewController = EFPSessionSearchRecordViewController()
             sessionSearchResultViewController.bindViewModel(to: searchResultViewModel)
             sessionSearchResultViewController.hidesBottomBarWhenPushed = true
-            let navigationController = UINavigationController(rootViewController: sessionSearchResultViewController)
-            
-            return navigationController
+            //let navigationController = UINavigationController(rootViewController: sessionSearchResultViewController)
+
+            return sessionSearchResultViewController
         case let .groupLocalSearchResult(viewmodel):
             var groupSearchViewController = EFPGroupLocalSearchResultViewController()
             // let navigation = UINavigationController(rootViewController: groupSearchViewController)
-            
+
             groupSearchViewController.bindViewModel(to: viewmodel)
-            
+
             return groupSearchViewController
         }
     }
 }
+protocol EFPContainerRouterProtocol {
+    func add(childScene: EFPContainerChildScene)
+    func remove(childScene: EFPContainerChildScene)
+}
+struct EFPContainerRouter: EFPContainerRouterProtocol {
+    let parentVC: UIViewController
+
+    func add(childScene: EFPContainerChildScene) {
+        let viewController = childScene.viewController()
+        parentVC.view.addSubview(viewController.view)
+        parentVC.addChildViewController(viewController)
+        viewController.didMove(toParentViewController: parentVC)
+
+    }
+
+    func remove(childScene: EFPContainerChildScene) {
+        let childVC = childScene.viewController()
+
+        childVC.willMove(toParentViewController: nil)
+        childVC.view.removeFromSuperview()
+        childVC.removeFromParentViewController()
+
+    }
+
+}
+

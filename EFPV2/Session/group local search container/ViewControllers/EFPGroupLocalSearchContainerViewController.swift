@@ -11,11 +11,10 @@ import RxSwift
 import RxCocoa
 import NSObject_Rx
 
-extension UIViewController {
-
-}
 
 class EFPGroupLocalSearchContainerViewController: UIViewController, BindableViewType, EFPTableViewAddConstraintsProtocol, EFPSearchBarAddProtocol {
+    var router:EFPContainerRouter!
+    
     var searchBar: UISearchBar = UISearchBar()
 
     var tableView: UITableView = UITableView()
@@ -27,36 +26,36 @@ class EFPGroupLocalSearchContainerViewController: UIViewController, BindableView
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        router = EFPContainerRouter(parentVC: self)
         addTableViewConstraints()
         addSearchBar()
-       let controlledText = searchBar.rx.text
         
-        viewModel.controlProperty = controlledText
+        viewModel.controlProperty = searchBar.rx.text
         
         searchBar.rx.textDidBeginEditing
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: {
-               
+                let viewModel = EFPSearchRecordViewModel()
+                let scene = EFPContainerChildScene.searchRecord(viewModel)
 
+                self.router.add(childScene: scene)
+                
             })
         searchBar.rx.cancelButtonClicked
             .subscribe(onNext: {
                 self.viewModel.pop()
             }).disposed(by: rx.disposeBag)
-//
-//        let sessionSearchRecordViewController = EFPSessionSearchRecordViewController()
-//
-//        addChildViewController(sessionSearchRecordViewController)
-//        view.addSubview(sessionSearchRecordViewController.view)
-//        sessionSearchRecordViewController.didMove(toParentViewController: self)
-        // Do any additional setup after loading the view.
 
-      /*  let value = searchBar.rx.value
+
+       let value = searchBar.rx.value
         value.observeOn(MainScheduler.instance)
-            .subscribe(onNext: {
-                print($0)
-                // self.viewModel.addResultViewController()
-            }) */
+            .subscribe({_ in
+                let viewModel = EFPGroupLocalSearchResultViewModel(session: self.viewModel.session)
+                viewModel.controlProperty = self.viewModel.controlProperty
+                let scene = EFPContainerChildScene.groupLocalSearchResult(viewModel)
+                self.router.add(childScene: scene)
+            })
+ 
 
     }
 
