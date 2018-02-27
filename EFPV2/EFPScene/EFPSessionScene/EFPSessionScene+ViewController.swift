@@ -51,10 +51,13 @@ extension EFPSessionScene: EFPSceneType {
 
             return playerViewController
         case let .localHistory(viewModel):
+
             var localHistorySessionViewController = EFPLocalHistorySessionViewController(session: viewModel.session)
 
             localHistorySessionViewController?.bindViewModel(to: viewModel)
-            return localHistorySessionViewController!
+            let navigationController = UINavigationController(rootViewController: localHistorySessionViewController!)
+
+            return navigationController
         case let .groupSearchContainer(viewModel):
             var groupLocalSearchContainerViewController = EFPGroupLocalSearchContainerViewController()
             

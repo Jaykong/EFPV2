@@ -55,7 +55,7 @@ class EFPGroupLocalSearchResultViewModel {
     func onModelSelected(_ message: NIMMessage) {
         let viewModel = EFPLocalHistoryViewModel(message: message, session: session)
         let scene = EFPSessionScene.localHistory(viewModel)
-        EFPSceneRouter.shared.transit(to: scene, transitionType: .push)
+        EFPSceneRouter.shared.transit(to: scene, transitionType: .modal)
 
     }
 
