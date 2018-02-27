@@ -11,58 +11,49 @@ import RxSwift
 import RxCocoa
 import NSObject_Rx
 
-
 class EFPGroupLocalSearchContainerViewController: UIViewController, BindableViewType, EFPTableViewAddConstraintsProtocol, EFPSearchBarAddProtocol {
-    var router:EFPContainerRouter!
+    var router: EFPContainerRouter!
     
     var searchBar: UISearchBar = UISearchBar()
-
     var tableView: UITableView = UITableView()
-
     typealias ViewModelType = EFPGroupLocalSearchContainerViewModel
     var viewModel: EFPGroupLocalSearchContainerViewModel!
+    
     func bindViewModel() {
 
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         router = EFPContainerRouter(parentVC: self)
         addTableViewConstraints()
         addSearchBar()
-        
-        viewModel.controlProperty = searchBar.rx.text
-        
+
         searchBar.rx.textDidBeginEditing
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: {
                 let viewModel = EFPSearchRecordViewModel()
                 let scene = EFPContainerChildScene.searchRecord(viewModel)
-
                 self.router.add(childScene: scene)
-                
             })
+            .disposed(by: rx.disposeBag)
+
         searchBar.rx.cancelButtonClicked
-            .subscribe(onNext: {
+            .subscribe({ _ in
                 self.viewModel.pop()
             }).disposed(by: rx.disposeBag)
 
 
-       let value = searchBar.rx.value
-        value.observeOn(MainScheduler.instance)
-            .subscribe({_ in
+        searchBar.rx.text
+            .observeOn(MainScheduler.instance)
+            .subscribe({ _ in
                 let viewModel = EFPGroupLocalSearchResultViewModel(session: self.viewModel.session)
-                viewModel.controlProperty = self.viewModel.controlProperty
+                viewModel.controlProperty = self.searchBar.rx.text
                 let scene = EFPContainerChildScene.groupLocalSearchResult(viewModel)
                 self.router.add(childScene: scene)
             })
- 
+            .disposed(by: rx.disposeBag)
 
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        //viewModel.addChild()
-        print(#function)
 
     }
 

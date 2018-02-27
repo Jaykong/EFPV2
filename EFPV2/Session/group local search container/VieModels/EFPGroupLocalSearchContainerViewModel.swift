@@ -15,23 +15,6 @@ struct EFPGroupLocalSearchContainerViewModel {
         self.session = session
     }
     
-    var controlProperty:ControlProperty<String?>!
-    func addChild() {
-        let viewModel = EFPSearchRecordViewModel()
-        let scene = EFPRecentSessionScene.searchRecord(viewModel)
-        EFPSceneRouter.shared.transit(to: scene, transitionType: .addChild)
-    }
-    
-    func addResultViewController() {
-        let viewModel = EFPGroupLocalSearchResultViewModel(session: session)
-        viewModel.controlProperty = controlProperty
-        
-        let scene = EFPSessionScene.groupLocalSearchResult(viewModel)
-        EFPSceneRouter.shared.transit(to: scene, transitionType: .addChild)
-            
-    }
-    
-    
     func pop() {
         EFPSceneRouter.shared.pop()
     }
