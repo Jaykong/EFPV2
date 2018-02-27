@@ -29,7 +29,7 @@ class RecentSessionListViewModel {
     }
     
     func onSelectedRecent(_ recent: NIMRecentSession!, at _: IndexPath!) {
-        let sessionViewModel = SessionViewModel()
+        let sessionViewModel = EFPSessionViewModel()
 
         sessionViewModel.session = recent.session
 

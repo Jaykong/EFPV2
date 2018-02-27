@@ -10,3 +10,7 @@
 #import "NIMAvatarImageView.h"
 #import "NIMSessionListCell.h"
 #import "NIMBadgeView.h"
+#import "NIMKitInfoFetchOption.h"
+#import "NIMSessionInteractorImpl.h"
+
+

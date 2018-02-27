@@ -11,7 +11,7 @@ import RxSwift
 import NSObject_Rx
 import RxDataSources
 
-class EFPSearchResultViewController: UIViewController, EFPTableViewProtocol,BindableViewType {
+class EFPSearchResultViewController: UIViewController, EFPTableViewAddConstraintsProtocol,BindableViewType {
     typealias ViewModelType = SearchResultViewModel
 
     var viewModel: SearchResultViewModel!

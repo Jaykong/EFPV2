@@ -89,20 +89,26 @@ extension Reactive where Base: NIMSDK {
         return Observable<[NIMMessage]>.create({ (observer) -> Disposable in
             let option = NIMMessageSearchOption()
             option.searchContent = text
+            option.allMessageTypes = false
+            option.messageTypes = [0]
+
             option.limit = 0
             option.order = .desc
+
             NIMSDK.shared().conversationManager.searchMessages(session, option: option, result: { (error, messages) in
+
+
                 if let error = error {
                     print(error.localizedDescription)
                     observer.onError(error)
-                    return
 
                 }
                 if let messages = messages {
                     observer.onNext(messages)
+                    observer.onCompleted()
                 }
-                
-                
+
+
 
             })
 

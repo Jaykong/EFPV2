@@ -31,12 +31,12 @@ class EFPGroupSearchViewModelTests: XCTestCase {
     }
 
     func testMessagesNotNil() {
-     let messages = try! viewModel.messages.toBlocking(timeout: 10).first()
+        let messages = try! viewModel.messages.toBlocking(timeout: 10).first()
         expect(messages).notTo(beNil())
-        print(messages)
+        //  print(messages)
         expect(messages?.first!.text).to(contain(searchText))
     }
-    
-   
+
+
 
 }

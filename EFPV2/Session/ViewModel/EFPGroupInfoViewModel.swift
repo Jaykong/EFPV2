@@ -48,8 +48,8 @@ struct EFPGroupInfoViewModel {
     func onSearchBtnClicked() {
         
 
-        let viewModel = EFPGroupSearchViewModel(searchText: "", session: session)
-        let scene = EFPSessionScene.groupSearch(viewModel)
+        let viewModel = EFPGroupLocalSearchResultViewModel(session: session)
+        let scene = EFPSessionScene.groupLocalSearchResult(viewModel)
         EFPSceneRouter.shared.transit(to: scene, transitionType: .modal)
 
     }

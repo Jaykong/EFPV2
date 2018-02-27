@@ -15,6 +15,8 @@ protocol EFPSceneRouterProtocol {
     func transit(to scene: EFPSceneType, transitionType: EFPTransitionType) -> Observable<Void>
     @discardableResult
     func pop() -> Observable<Void>
+    @discardableResult
+    func removeChild() -> Observable<Void>
 
 }
 
@@ -23,9 +25,22 @@ enum EFPTransitionType {
     case push
     case modal
     case video
+    case addChild
 }
 
 class EFPSceneRouter: EFPSceneRouterProtocol {
+    func removeChild() -> Observable<Void> {
+        let subject = PublishSubject<Void>()
+        currentViewController.willMove(toParentViewController: nil)
+        currentViewController.view.removeFromSuperview()
+        currentViewController.removeFromParentViewController()
+        
+        currentViewController = EFPSceneRouter.actionalViewController(for: currentViewController.parent!)
+        subject.onCompleted()
+        return subject.asObservable()
+
+    }
+
     let disposeBag = DisposeBag()
     var currentViewController: UIViewController!
     @discardableResult
@@ -45,6 +60,8 @@ class EFPSceneRouter: EFPSceneRouterProtocol {
                 .disposed(by: disposeBag)
             navigationController.popViewController(animated: true)
             self.currentViewController = EFPSceneRouter.actionalViewController(for: navigationController.topViewController!)
+            publishedObject.onCompleted()
+
 
         }
         return publishedObject.asObservable()
@@ -65,6 +82,12 @@ class EFPSceneRouter: EFPSceneRouterProtocol {
         return controller
 
     }
+    fileprivate func addChildViewController(_ parent: UIViewController, _ viewController: UIViewController) {
+        parent.addChildViewController(viewController)
+        parent.view.addSubview(viewController.view)
+        viewController.didMove(toParentViewController:parent )
+    }
+
     @discardableResult
     func transit(to scene: EFPSceneType, transitionType: EFPTransitionType) -> Observable<Void> {
         let publishedObject = PublishSubject<Void>()
@@ -90,6 +113,8 @@ class EFPSceneRouter: EFPSceneRouterProtocol {
                 self.currentViewController = EFPSceneRouter.actionalViewController(for: viewController)
                 publishedObject.onCompleted()
             })
+            print(#function)
+            
         case .video:
 
             currentViewController.present(viewController, animated: true, completion: {
@@ -97,8 +122,16 @@ class EFPSceneRouter: EFPSceneRouterProtocol {
                     playerViewController.player?.play()
                 }
             })
-        }
+        case .addChild:
+            addChildViewController(currentViewController, viewController)
+//            if let parent = currentViewController.parent {
+//                addChildViewController(parent, viewController)
+//            } else {
+//
+//            }
+//            self.currentViewController = EFPSceneRouter.actionalViewController(for: viewController)
 
+        }
         return publishedObject.asObservable().take(1)
     }
 

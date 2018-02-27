@@ -7,6 +7,6 @@
 //
 
 import Foundation
-class SessionHistoryViewModel: SessionViewModel {
+class SessionHistoryViewModel: EFPSessionViewModel {
     var isChatEnabled = false
 }
