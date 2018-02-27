@@ -34,7 +34,7 @@ class EFPSceneRouter: EFPSceneRouterProtocol {
         currentViewController.willMove(toParentViewController: nil)
         currentViewController.view.removeFromSuperview()
         currentViewController.removeFromParentViewController()
-        
+
         currentViewController = EFPSceneRouter.actionalViewController(for: currentViewController.parent!)
         subject.onCompleted()
         return subject.asObservable()
@@ -52,8 +52,8 @@ class EFPSceneRouter: EFPSceneRouterProtocol {
                 publishedObject.onCompleted()
             })
 
-        } else
-        if let navigationController = currentViewController.navigationController {
+        }
+        else if let navigationController = currentViewController.navigationController {
             navigationController.rx.delegate.sentMessage(#selector(UINavigationControllerDelegate.navigationController(_: didShow: animated:)))
                 .map({ _ in })
                 .bind(to: publishedObject)
@@ -62,12 +62,12 @@ class EFPSceneRouter: EFPSceneRouterProtocol {
             self.currentViewController = EFPSceneRouter.actionalViewController(for: navigationController.topViewController!)
             publishedObject.onCompleted()
 
-
         }
         return publishedObject.asObservable()
     }
 
     static func actionalViewController(for controller: UIViewController) -> UIViewController {
+
         if let tabController = controller as? UITabBarController {
             if let navigationController = tabController.selectedViewController as? UINavigationController {
                 return navigationController.topViewController!
@@ -76,7 +76,14 @@ class EFPSceneRouter: EFPSceneRouterProtocol {
         }
 
         if let navigationController = controller as? UINavigationController {
+            if let searchContainerController = navigationController.topViewController as? EFPGroupLocalSearchContainerViewController {
+                if let lastController = searchContainerController.childViewControllers.last {
+                    return lastController
+                }
+
+            }
             return navigationController.topViewController!
+
         }
 
         return controller
@@ -85,7 +92,7 @@ class EFPSceneRouter: EFPSceneRouterProtocol {
     fileprivate func addChildViewController(_ parent: UIViewController, _ viewController: UIViewController) {
         parent.addChildViewController(viewController)
         parent.view.addSubview(viewController.view)
-        viewController.didMove(toParentViewController:parent )
+        viewController.didMove(toParentViewController: parent)
     }
 
     @discardableResult
@@ -114,7 +121,7 @@ class EFPSceneRouter: EFPSceneRouterProtocol {
                 publishedObject.onCompleted()
             })
             print(#function)
-            
+
         case .video:
 
             currentViewController.present(viewController, animated: true, completion: {

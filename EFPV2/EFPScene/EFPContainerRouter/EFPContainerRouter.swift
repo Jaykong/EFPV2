@@ -20,12 +20,12 @@ extension EFPContainerChildScene {
             var sessionSearchResultViewController = EFPSessionSearchRecordViewController()
             sessionSearchResultViewController.bindViewModel(to: searchResultViewModel)
             sessionSearchResultViewController.hidesBottomBarWhenPushed = true
-            //let navigationController = UINavigationController(rootViewController: sessionSearchResultViewController)
+            // let navigationController = UINavigationController(rootViewController: sessionSearchResultViewController)
 
             return sessionSearchResultViewController
         case let .groupLocalSearchResult(viewmodel):
             var groupSearchViewController = EFPGroupLocalSearchResultViewController()
-            // let navigation = UINavigationController(rootViewController: groupSearchViewController)
+            //let navigation = UINavigationController(rootViewController: groupSearchViewController)
 
             groupSearchViewController.bindViewModel(to: viewmodel)
 
@@ -38,9 +38,10 @@ protocol EFPContainerRouterProtocol {
     func remove(childScene: EFPContainerChildScene)
 }
 struct EFPContainerRouter: EFPContainerRouterProtocol {
-    let parentVC: UIViewController
+    var parentVC: UIViewController
 
     func add(childScene: EFPContainerChildScene) {
+        removeAll()
         let viewController = childScene.viewController()
         parentVC.view.addSubview(viewController.view)
         parentVC.addChildViewController(viewController)
@@ -55,6 +56,12 @@ struct EFPContainerRouter: EFPContainerRouterProtocol {
         childVC.view.removeFromSuperview()
         childVC.removeFromParentViewController()
 
+    }
+
+    private func removeAll() {
+        
+        var childControllers = parentVC.childViewControllers
+        childControllers.removeAll()
     }
 
 }
