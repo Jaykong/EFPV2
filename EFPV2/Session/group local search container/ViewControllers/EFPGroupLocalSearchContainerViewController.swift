@@ -50,6 +50,7 @@ class EFPGroupLocalSearchContainerViewController: UIViewController, BindableView
                 let viewModel = EFPGroupLocalSearchResultViewModel(session: self.viewModel.session)
                 viewModel.controlProperty = self.searchBar.rx.text
                 let scene = EFPContainerChildScene.groupLocalSearchResult(viewModel)
+                
                 self.router.add(childScene: scene)
             })
             .disposed(by: rx.disposeBag)
