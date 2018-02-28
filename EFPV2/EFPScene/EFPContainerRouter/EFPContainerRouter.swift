@@ -8,7 +8,7 @@
 
 import Foundation
 enum EFPContainerChildScene {
-    case searchRecord(EFPSearchRecordViewModel)
+    case searchRecord(EFPGroupLocalSearchRecordViewModel)
     case groupLocalSearchResult(EFPGroupLocalSearchResultViewModel)
 }
 
@@ -16,18 +16,18 @@ extension EFPContainerChildScene {
     func viewController() -> UIViewController {
         switch self {
 
-        case let .searchRecord(searchResultViewModel):
-            var sessionSearchResultViewController = EFPSessionSearchRecordViewController()
-            sessionSearchResultViewController.bindViewModel(to: searchResultViewModel)
-            sessionSearchResultViewController.hidesBottomBarWhenPushed = true
+        case let .searchRecord(viewModel):
+            var groupLocalSearchRecordController = EFPGroupLocalSearchRecordController()
+            groupLocalSearchRecordController.bindViewModel(to: viewModel)
+            groupLocalSearchRecordController.hidesBottomBarWhenPushed = true
             // let navigationController = UINavigationController(rootViewController: sessionSearchResultViewController)
 
-            return sessionSearchResultViewController
-        case let .groupLocalSearchResult(viewmodel):
+            return groupLocalSearchRecordController
+        case let .groupLocalSearchResult(viewModel):
             var groupSearchViewController = EFPGroupLocalSearchResultViewController()
             //let navigation = UINavigationController(rootViewController: groupSearchViewController)
 
-            groupSearchViewController.bindViewModel(to: viewmodel)
+            groupSearchViewController.bindViewModel(to: viewModel)
 
             return groupSearchViewController
         }

@@ -49,8 +49,7 @@ class EFLocalMessageSearchResultCell: UITableViewCell {
         }
     }
     
-    func configure(withViewModel viewModel:EFPGroupSearchCellViewModel) {
-        let item = viewModel.item
+    func configure(withModel item:EFPGroupLocalMessageSearchResultItem) {
         avatarImageView.image = item.avtarImage
         titleLbl.text = item.senderName
         messageLbl.attributedText = item.content

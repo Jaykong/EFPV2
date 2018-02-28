@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class EFPSearchParentViewController: UIViewController, BindableViewType {
     var viewModel: SearchParentViewModel!
 
@@ -34,8 +32,9 @@ class EFPSearchParentViewController: UIViewController, BindableViewType {
         recordViewController = EFPSessionSearchRecordViewController()
         addChildViewController(recordViewController)
         view.addSubview(recordViewController.view)
+        let viewModel = EFPSearchRecordViewModel()
+        recordViewController.bindViewModel(to:viewModel )
         
-        recordViewController.bindViewModel(to: EFPSearchRecordViewModel())
         recordViewController.didMove(toParentViewController: self)
 
         navigationItem.titleView = searchBar
