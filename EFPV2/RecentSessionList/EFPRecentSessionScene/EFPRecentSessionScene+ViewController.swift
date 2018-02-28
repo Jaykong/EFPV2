@@ -14,7 +14,7 @@ enum EFPRecentSessionScene {
     case searchParent(SearchParentViewModel)
     case searchRecord(EFPSearchRecordViewModel)
     case sessionHistory(EFPSearchRecordViewModel)
-    case searchResult(SearchResultViewModel)
+    case searchResult(EFPSearchResultViewModel)
 
    
 
@@ -30,9 +30,9 @@ extension EFPRecentSessionScene: EFPSceneType {
             return sessionViewController!
        
 
-        case let .searchRecord(searchResultViewModel):
+        case let .searchRecord(viewModel):
             var sessionSearchResultViewController = EFPSessionSearchRecordViewController()
-            sessionSearchResultViewController.bindViewModel(to: searchResultViewModel)
+            sessionSearchResultViewController.bindViewModel(to: viewModel)
             sessionSearchResultViewController.hidesBottomBarWhenPushed = true
             let navigationController = UINavigationController(rootViewController: sessionSearchResultViewController)
 

@@ -10,6 +10,8 @@ import Foundation
 import RxSwift
 import RxCocoa
 import RxDataSources
+
+typealias GroupLocalSearchResultSectionModel = AnimatableSectionModel<String, EFPGroupLocalMessageSearchResultItem>
 class EFPGroupLocalSearchResultViewModel {
     var session: NIMSession
     
@@ -19,7 +21,8 @@ class EFPGroupLocalSearchResultViewModel {
         self.session = session
     }
     
-    func messages() -> Observable<[AnimatableSectionModel<String, NIMMessage>]> {
+    
+    func messages() -> Observable<[GroupLocalSearchResultSectionModel]> {
         
         return
             controlProperty
@@ -33,11 +36,16 @@ class EFPGroupLocalSearchResultViewModel {
         
     }
 
-    private func messages(text: String) -> Observable<[AnimatableSectionModel<String, NIMMessage>]> {
+    private func messages(text: String) -> Observable<[GroupLocalSearchResultSectionModel]> {
 
         return NIMSDK.rx.search(session: self.session, text: text)
-            .map({ (array) -> [AnimatableSectionModel<String, NIMMessage>] in
-                return   [AnimatableSectionModel<String, NIMMessage>(model: text, items: array)]
+            .map({ (array) -> [GroupLocalSearchResultSectionModel] in
+                
+                
+                return [GroupLocalSearchResultSectionModel(model: "", items: array.map({ (message) -> EFPGroupLocalMessageSearchResultItem in
+                    let cellViewModel = EFPGroupSearchCellViewModel(message: message, searchText: text)
+                    return cellViewModel.item
+                }))]
             })
 
     }
@@ -52,8 +60,12 @@ class EFPGroupLocalSearchResultViewModel {
         EFPSceneRouter.shared.pop()
 
     }
-    func onModelSelected(_ message: NIMMessage) {
-        let viewModel = EFPLocalHistoryViewModel(message: message, session: session)
+    func insertRecord(text:String) {
+        RecentSearchRecordStore.shared.insert(atFirst: text)
+    }
+    func onModelSelected(_ item: EFPGroupLocalMessageSearchResultItem) {
+        insertRecord(text: item.searchText)
+        let viewModel = EFPLocalHistoryViewModel(message: item.message, session: session)
         let scene = EFPSessionScene.localHistory(viewModel)
         EFPSceneRouter.shared.transit(to: scene, transitionType: .modal)
 

@@ -21,7 +21,7 @@ class EFPGroupSearchCellViewModel {
     enum GroupSearchError {
         case invalid
     }
-    lazy var item: GroupLocalMessageSearchResultItem = {
+    lazy var item: EFPGroupLocalMessageSearchResultItem = {
         let option = NIMKitInfoFetchOption()
         option.message = message
 
@@ -29,16 +29,17 @@ class EFPGroupSearchCellViewModel {
         let date = Date(timeIntervalSince1970:message.timestamp)
         
         guard let senderName = message.from,let text = message.text,let avatarImage = info?.avatarImage else {
-            return GroupLocalMessageSearchResultItem(messageId: "", senderName: "", content:NSAttributedString(), timeStamp: "", avtarImage: UIImage())
+            return EFPGroupLocalMessageSearchResultItem(messageId: "", senderName: "", content:NSAttributedString(),  timeStamp: "", avtarImage: UIImage(),searchText: "", message: NIMMessage())
+            
+//
         }
 
         let attri:NSAttributedString = NSAttributedString(string: text)
         
         let newAttri = attri.applying(attributes: [NSAttributedStringKey.foregroundColor:UIColor.green], toOccurrencesOf: searchText)
         
-        
 
-        var localItem = GroupLocalMessageSearchResultItem(messageId: message.messageId, senderName: senderName, content:newAttri, timeStamp: date.string(), avtarImage: avatarImage)
+        var localItem = EFPGroupLocalMessageSearchResultItem(messageId: message.messageId, senderName: senderName, content:newAttri, timeStamp: date.string(), avtarImage: avatarImage, searchText: searchText, message: message)
         return localItem
 
     }()

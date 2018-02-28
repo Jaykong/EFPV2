@@ -17,7 +17,7 @@
 		1748489720301246000C7BEC /* recentSearchRecords.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1748489620301246000C7BEC /* recentSearchRecords.plist */; };
 		1748489B20301C5A000C7BEC /* SessionHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1748489A20301C5A000C7BEC /* SessionHistoryViewModel.swift */; };
 		1748489D20302A94000C7BEC /* EFPSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1748489C20302A94000C7BEC /* EFPSearchResultViewController.swift */; };
-		1748489F20302C67000C7BEC /* SearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1748489E20302C67000C7BEC /* SearchResultViewModel.swift */; };
+		1748489F20302C67000C7BEC /* EFPSearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1748489E20302C67000C7BEC /* EFPSearchResultViewModel.swift */; };
 		174848A220303086000C7BEC /* EFPTableViewAddConstraintsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174848A120303086000C7BEC /* EFPTableViewAddConstraintsProtocol.swift */; };
 		17491EF2204006B2002DBF2F /* MockConstantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17491EF1204006B2002DBF2F /* MockConstantData.swift */; };
 		1775986120294B50004236EB /* VideoViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1775986020294B50004236EB /* VideoViewItem.swift */; };
@@ -220,6 +220,10 @@
 		17D1A7EB20202099007381F4 /* NIMConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A7EA20202099007381F4 /* NIMConstant.swift */; };
 		17D1A7ED2020211C007381F4 /* NIMSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A7EC2020211C007381F4 /* NIMSDKTests.swift */; };
 		17E2709E2044F64200B8FA35 /* EFPContainerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E2709D2044F64200B8FA35 /* EFPContainerRouter.swift */; };
+		17E270C62045D83000B8FA35 /* EFPSearchRecordControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E270C52045D83000B8FA35 /* EFPSearchRecordControllerProtocol.swift */; };
+		17E270C82045E1E600B8FA35 /* EFPGroupLocalSearchRecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E270C72045E1E600B8FA35 /* EFPGroupLocalSearchRecordController.swift */; };
+		17E270CA2045E36500B8FA35 /* EFPGroupLocalSearchRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E270C92045E36500B8FA35 /* EFPGroupLocalSearchRecordViewModel.swift */; };
+		17E270CD204659AC00B8FA35 /* EFPSearchRecordViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E270CC204659AC00B8FA35 /* EFPSearchRecordViewModelProtocol.swift */; };
 		17E9880E202EA19000EC54CB /* EFPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9880D202EA19000EC54CB /* EFPHomeViewController.swift */; };
 		17E98812202EA81700EC54CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17E98811202EA81700EC54CB /* Localizable.strings */; };
 		17E98814202EAAF700EC54CB /* EFPRootScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E98813202EAAF700EC54CB /* EFPRootScene.swift */; };
@@ -257,7 +261,7 @@
 		1748489620301246000C7BEC /* recentSearchRecords.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = recentSearchRecords.plist; sourceTree = "<group>"; };
 		1748489A20301C5A000C7BEC /* SessionHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionHistoryViewModel.swift; sourceTree = "<group>"; };
 		1748489C20302A94000C7BEC /* EFPSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPSearchResultViewController.swift; sourceTree = "<group>"; };
-		1748489E20302C67000C7BEC /* SearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewModel.swift; sourceTree = "<group>"; };
+		1748489E20302C67000C7BEC /* EFPSearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPSearchResultViewModel.swift; sourceTree = "<group>"; };
 		174848A120303086000C7BEC /* EFPTableViewAddConstraintsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPTableViewAddConstraintsProtocol.swift; sourceTree = "<group>"; };
 		17491EF1204006B2002DBF2F /* MockConstantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockConstantData.swift; sourceTree = "<group>"; };
 		1775986020294B50004236EB /* VideoViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewItem.swift; sourceTree = "<group>"; };
@@ -609,6 +613,10 @@
 		17D1A7EA20202099007381F4 /* NIMConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIMConstant.swift; sourceTree = "<group>"; };
 		17D1A7EC2020211C007381F4 /* NIMSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIMSDKTests.swift; sourceTree = "<group>"; };
 		17E2709D2044F64200B8FA35 /* EFPContainerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPContainerRouter.swift; sourceTree = "<group>"; };
+		17E270C52045D83000B8FA35 /* EFPSearchRecordControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPSearchRecordControllerProtocol.swift; sourceTree = "<group>"; };
+		17E270C72045E1E600B8FA35 /* EFPGroupLocalSearchRecordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPGroupLocalSearchRecordController.swift; sourceTree = "<group>"; };
+		17E270C92045E36500B8FA35 /* EFPGroupLocalSearchRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPGroupLocalSearchRecordViewModel.swift; sourceTree = "<group>"; };
+		17E270CC204659AC00B8FA35 /* EFPSearchRecordViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPSearchRecordViewModelProtocol.swift; sourceTree = "<group>"; };
 		17E9880D202EA19000EC54CB /* EFPHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPHomeViewController.swift; sourceTree = "<group>"; };
 		17E98811202EA81700EC54CB /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		17E98813202EAAF700EC54CB /* EFPRootScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFPRootScene.swift; sourceTree = "<group>"; };
@@ -653,6 +661,8 @@
 		1718E32920440E75003FE156 /* VieModels */ = {
 			isa = PBXGroup;
 			children = (
+				17E270CF20467FCF00B8FA35 /* CellViewModel */,
+				17E270CB2046596700B8FA35 /* GroupLocalSearchRecord */,
 				17AC02462043AAF700D1EF3F /* EFPGroupLocalSearchContainerViewModel.swift */,
 				17ACDA8D203DA76000A7D9C7 /* EFPGroupLocalSearchResultViewModel.swift */,
 			);
@@ -662,6 +672,7 @@
 		1718E32A20440E82003FE156 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				17E270C72045E1E600B8FA35 /* EFPGroupLocalSearchRecordController.swift */,
 				17AC02432043AA6500D1EF3F /* EFPGroupLocalSearchContainerViewController.swift */,
 				17C6C0EC203DA0FA0083C786 /* EFPGroupLocalSearchResultViewController.swift */,
 			);
@@ -690,7 +701,6 @@
 				1728C7622027F07A0086E527 /* EFPSessionViewModel.swift */,
 				17ACDA8F203DAD4000A7D9C7 /* EFPGroupInfoViewModel.swift */,
 				17ACDAAB203E9C0000A7D9C7 /* EFPGroupRenameViewModel.swift */,
-				1780CEB120411304000E3275 /* EFPGroupSearchCellViewModel.swift */,
 				17AC02412042A45C00D1EF3F /* EFPLocalHistoryViewModel.swift */,
 			);
 			path = ViewModel;
@@ -730,7 +740,7 @@
 				17D1A34F201EE264007381F4 /* RecentSessionListViewModel.swift */,
 				17C6C0E62038295D0083C786 /* SearchParentViewModel.swift */,
 				1748489A20301C5A000C7BEC /* SessionHistoryViewModel.swift */,
-				1748489E20302C67000C7BEC /* SearchResultViewModel.swift */,
+				1748489E20302C67000C7BEC /* EFPSearchResultViewModel.swift */,
 				1775988920297145004236EB /* RecentSessionListCellViewModel.swift */,
 			);
 			path = ViewModels;
@@ -857,6 +867,7 @@
 		17AC02452043AAC600D1EF3F /* group local search container */ = {
 			isa = PBXGroup;
 			children = (
+				17E270CE20467F9900B8FA35 /* Model */,
 				1718E32A20440E82003FE156 /* ViewControllers */,
 				1718E32920440E75003FE156 /* VieModels */,
 			);
@@ -883,8 +894,8 @@
 		17AC03F12043E93A00D1EF3F /* EFPSearchRecordInSessionAndGroupSearch */ = {
 			isa = PBXGroup;
 			children = (
-				17C66CED20245A5800999485 /* EFPSearchRecordViewModel.swift */,
 				17C66CE920243D5100999485 /* EFPSessionSearchRecordViewController.swift */,
+				17E270C52045D83000B8FA35 /* EFPSearchRecordControllerProtocol.swift */,
 			);
 			path = EFPSearchRecordInSessionAndGroupSearch;
 			sourceTree = "<group>";
@@ -913,7 +924,6 @@
 			isa = PBXGroup;
 			children = (
 				1780CEAE204106A7000E3275 /* GroupSearch */,
-				1780CEAF204106DF000E3275 /* GroupLocalSearchResultItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1677,6 +1687,32 @@
 			path = EFPContainerRouter;
 			sourceTree = "<group>";
 		};
+		17E270CB2046596700B8FA35 /* GroupLocalSearchRecord */ = {
+			isa = PBXGroup;
+			children = (
+				17C66CED20245A5800999485 /* EFPSearchRecordViewModel.swift */,
+				17E270C92045E36500B8FA35 /* EFPGroupLocalSearchRecordViewModel.swift */,
+				17E270CC204659AC00B8FA35 /* EFPSearchRecordViewModelProtocol.swift */,
+			);
+			path = GroupLocalSearchRecord;
+			sourceTree = "<group>";
+		};
+		17E270CE20467F9900B8FA35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1780CEAF204106DF000E3275 /* GroupLocalSearchResultItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		17E270CF20467FCF00B8FA35 /* CellViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1780CEB120411304000E3275 /* EFPGroupSearchCellViewModel.swift */,
+			);
+			path = CellViewModel;
+			sourceTree = "<group>";
+		};
 		17E9880C202EA0B500EC54CB /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -2151,6 +2187,7 @@
 				17B668632043EF190073DF08 /* NIMSessionViewController.m in Sources */,
 				17B6684A2043EF190073DF08 /* NIMSessionTableAdapter.m in Sources */,
 				17AC02442043AA6500D1EF3F /* EFPGroupLocalSearchContainerViewController.swift in Sources */,
+				17E270C62045D83000B8FA35 /* EFPSearchRecordControllerProtocol.swift in Sources */,
 				17ACDAA0203E01C100A7D9C7 /* EFPGroupNameTableViewCell.swift in Sources */,
 				17B6682E2043EF190073DF08 /* NIMTimePickerView.m in Sources */,
 				17B6685C2043EF190073DF08 /* NIMSessionFileTransContentView.m in Sources */,
@@ -2164,6 +2201,8 @@
 				17B668712043EF190073DF08 /* NIMKitConfig.m in Sources */,
 				171B5418202F4C8B00686BF5 /* EFPRecentSessionScene+ViewController.swift in Sources */,
 				17ABDE15202B8512009ED844 /* HomeViewModel.swift in Sources */,
+				17E270CA2045E36500B8FA35 /* EFPGroupLocalSearchRecordViewModel.swift in Sources */,
+				17E270CD204659AC00B8FA35 /* EFPSearchRecordViewModelProtocol.swift in Sources */,
 				17D1A7E720201B97007381F4 /* NIMService.swift in Sources */,
 				17B6685D2043EF190073DF08 /* NIMSessionTextContentView.m in Sources */,
 				17B6681F2043EF190073DF08 /* NIMCustomLeftBarView.m in Sources */,
@@ -2230,6 +2269,7 @@
 				17C6C0EB203D91DD0083C786 /* EFPGroupInfoViewController.swift in Sources */,
 				17B667FA2043EF190073DF08 /* NIMContactDataItem.m in Sources */,
 				17B6682C2043EF190073DF08 /* NIMTeamAnnouncementListViewController.m in Sources */,
+				17E270C82045E1E600B8FA35 /* EFPGroupLocalSearchRecordController.swift in Sources */,
 				17B668482043EF190073DF08 /* NIMCellLayoutConfig.m in Sources */,
 				17B668092043EF190073DF08 /* NIMKitDevice.m in Sources */,
 				17B668672043EF190073DF08 /* UITableView+NIMScrollToBottom.m in Sources */,
@@ -2279,7 +2319,7 @@
 				17B6681E2043EF190073DF08 /* NIMPageView.m in Sources */,
 				1795CAE92028B588006DD9F0 /* SessionImageViewModel.swift in Sources */,
 				17AC023E2041B4B900D1EF3F /* NSAttributedString+Extension.swift in Sources */,
-				1748489F20302C67000C7BEC /* SearchResultViewModel.swift in Sources */,
+				1748489F20302C67000C7BEC /* EFPSearchResultViewModel.swift in Sources */,
 				17A2F2272021D67E009A4682 /* SessionSearchResult.swift in Sources */,
 				17B668382043EF190073DF08 /* NIMMediaItem.m in Sources */,
 				17B6682B2043EF190073DF08 /* NIMTeamInfoData.m in Sources */,

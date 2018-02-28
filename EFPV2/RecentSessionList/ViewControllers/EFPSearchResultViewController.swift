@@ -12,9 +12,9 @@ import NSObject_Rx
 import RxDataSources
 
 class EFPSearchResultViewController: UIViewController, EFPTableViewAddConstraintsProtocol,BindableViewType {
-    typealias ViewModelType = SearchResultViewModel
+    typealias ViewModelType = EFPSearchResultViewModel
 
-    var viewModel: SearchResultViewModel!
+    var viewModel: EFPSearchResultViewModel!
     
     func bindViewModel() {
         

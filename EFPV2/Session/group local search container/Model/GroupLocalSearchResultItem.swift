@@ -8,16 +8,18 @@
 
 import Foundation
 import RxDataSources
-struct GroupLocalMessageSearchResultItem {
+struct EFPGroupLocalMessageSearchResultItem {
 //    let userId:String
     let messageId: String
     let senderName: String
     let content: NSAttributedString
     let timeStamp: String
     let avtarImage:UIImage
+    let searchText:String
+    let message:NIMMessage
 }
-extension GroupLocalMessageSearchResultItem: IdentifiableType, Equatable {
-    static func == (lhs: GroupLocalMessageSearchResultItem, rhs: GroupLocalMessageSearchResultItem) -> Bool {
+extension EFPGroupLocalMessageSearchResultItem: IdentifiableType, Equatable {
+    static func == (lhs: EFPGroupLocalMessageSearchResultItem, rhs: EFPGroupLocalMessageSearchResultItem) -> Bool {
         return lhs.messageId == rhs.messageId
     }
 

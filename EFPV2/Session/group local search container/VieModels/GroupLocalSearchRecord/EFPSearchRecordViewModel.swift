@@ -9,25 +9,22 @@
 import Foundation
 import RxSwift
 import RxCocoa
+
 struct EFPSearchRecordViewModel {
+   // var sectionOfRecent: Observable<[SectionOfRecentSearchRecord]>
     
     
-    let sectionOfRecent = Observable<[SectionOfRecentSearchRecord]>.create { (observer) -> Disposable in
-        let sharedRecord = RecentSearchRecordStore.shared
-        let completedSection = SectionOfRecentSearchRecord(title: "Others", items: ["#Completed Classes"])
-        guard sharedRecord.count > 0 else {
+    
 
-            observer.onNext([completedSection])
-            return Disposables.create()
-        }
 
-        let recentSection = SectionOfRecentSearchRecord(title: "Recent", items: sharedRecord.recentRecord)
+    func onSelectCell(at indexPath: IndexPath, model: String) {
+        let viewModel = EFPSearchResultViewModel()
 
-        observer.onNext([recentSection, completedSection])
+        let scene = EFPRecentSessionScene.searchResult(viewModel)
 
-        return Disposables.create()
+         EFPSceneRouter.shared.transit(to: scene, transitionType: .modal)
     }
-    
+    /*
     func onSelectCell(at indexPath:IndexPath,model: String) {
         var searchResultViewModel = SearchResultViewModel()
         let selected = Variable<String>(model)
@@ -40,16 +37,16 @@ struct EFPSearchRecordViewModel {
         
        // EFPSceneRouter.shared.transit(to: scene, transitionType: .modal)
     }
-    
-    func onTextDidBeginEditing(_ searchBar:UISearchBar) {
-        var searchResultViewModel = SearchResultViewModel()
+    */
+    func onTextDidBeginEditing(_ searchBar: UISearchBar) {
+        var searchResultViewModel = EFPSearchResultViewModel()
         let selected = Variable<String>(searchBar.text!)
         searchResultViewModel.selectedModel = selected
         let scene = EFPRecentSessionScene.searchResult(searchResultViewModel)
         EFPSceneRouter.shared.transit(to: scene, transitionType: .modal)
 
     }
-    
+
     func pop() {
         EFPSceneRouter.shared.pop()
     }

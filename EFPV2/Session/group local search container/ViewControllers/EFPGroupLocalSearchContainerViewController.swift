@@ -32,7 +32,7 @@ class EFPGroupLocalSearchContainerViewController: UIViewController, BindableView
         searchBar.rx.textDidBeginEditing
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: {
-                let viewModel = EFPSearchRecordViewModel()
+                let viewModel = EFPGroupLocalSearchRecordViewModel(session: self.viewModel.session)
                 let scene = EFPContainerChildScene.searchRecord(viewModel)
                 self.router.add(childScene: scene)
             })

@@ -30,11 +30,11 @@ class EFPGroupLocalSearchResultViewController: UIViewController, BindableViewTyp
         addTableViewConstraints()
         tableView.register(cellWithClass: EFLocalMessageSearchResultCell.self)
 
-        let dataSource = RxTableViewSectionedAnimatedDataSource<AnimatableSectionModel<String, NIMMessage>>(configureCell: { ds, tb, indexPath, msg -> EFLocalMessageSearchResultCell in
+        let dataSource = RxTableViewSectionedAnimatedDataSource<GroupLocalSearchResultSectionModel>(configureCell: { ds, tb, indexPath, item -> EFLocalMessageSearchResultCell in
 
             let cell = tb.dequeueReusableCell(withClass: EFLocalMessageSearchResultCell.self, for: indexPath)
 
-            cell!.configure(withViewModel: self.viewModel.cellViewModel(message: msg, searchText: ds.sectionModels[indexPath.section].model))
+            cell!.configure(withModel:item)
 
             return cell!
 
@@ -44,9 +44,12 @@ class EFPGroupLocalSearchResultViewController: UIViewController, BindableViewTyp
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: rx.disposeBag)
 
-        tableView.rx.modelSelected(NIMMessage.self)
+        
+        tableView.rx.modelSelected(EFPGroupLocalMessageSearchResultItem.self)
             .subscribe(onNext: {
+                print($0)
                 self.viewModel.onModelSelected($0)
+                
             })
             .disposed(by: rx.disposeBag)
 

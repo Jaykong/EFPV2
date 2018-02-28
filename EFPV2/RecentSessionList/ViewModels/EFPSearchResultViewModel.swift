@@ -8,7 +8,7 @@
 
 import Foundation
 import RxSwift
-struct SearchResultViewModel {
+struct EFPSearchResultViewModel {
     //var searchedText:Observable<String>!
     var selectedModel:Variable<String>!
     func pop() {
